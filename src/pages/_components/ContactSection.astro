@@ -1,0 +1,58 @@
+---
+import ProfileSection from "./ProfileSection.vue";
+import TextLink from "@components/TextLink.vue";
+
+export interface Props {
+  contact: {
+    email: string;
+    city: string;
+    country: string;
+    github: string;
+  };
+  class?: string;
+}
+
+const { contact, class: className, ...rest } = Astro.props;
+---
+<ProfileSection class={className} {...rest}>
+  <ul>
+    <!-- Email -->
+    <li>
+      <TextLink class="row" href={`mailto:${contact.email}`}>
+        {contact.email}<i class="far fa-envelope fa-fw fa-lg" />
+      </TextLink>
+    </li>
+
+    <!-- City, Country -->
+    <li class="row">
+      {contact.city}, { contact.country }<i class="fas fa-home fa-fw fa-lg" />
+    </li>
+
+    <!-- GitHub -->
+    <li>
+      <TextLink class="row" href={`https://github.com/${contact.github}`} target="_blank">
+        github.com/{contact.github}<i class="fab fa-github fa-fw fa-lg" />
+      </TextLink>
+    </li>
+  </ul>
+</ProfileSection>
+
+<style lang="scss">
+@import "../variables";
+
+ul {
+  margin: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: $space-small;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $space-xsmall;
+}
+</style>

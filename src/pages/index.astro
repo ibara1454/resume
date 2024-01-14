@@ -1,10 +1,10 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import PageContainer from "@components/PageContainer.astro";
 import Page from "@components/Page.astro";
 import avatarImage from "@assets/images/avatar.jpg";
 import ProfileTitle from "./_components/ProfileTitle.vue";
-import ProfileContact from "./_components/ProfileContact.vue";
+import ContactSection from './_components/ContactSection.astro';
 import ProfileExperience from "./_components/ProfileExperience.vue";
 import ProfileEducation from "./_components/ProfileEducation.vue";
 import ProfileSkills from "./_components/ProfileSkills.vue";
@@ -25,7 +25,7 @@ import data from "../data/profile";
 
     <!-- The side part -->
     <aside class="left-body">
-      <ProfileContact class="contacts" contact={data.contact} />
+      <ContactSection class="contacts" contact={data.contact} />
       <ProfileSkills class="skills" skills={data.skills} />
       <ProfileQualifications
         class="qualifications"
