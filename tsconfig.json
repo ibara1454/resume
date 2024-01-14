@@ -19,6 +19,7 @@
         "src/data/*"
       ]
     },
-    "jsx": "preserve"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

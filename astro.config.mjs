@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://vitejs.dev/config/server-options.html#server-watch
 // Note that usePolling leads to high CPU utilization.
 import vue from "@astrojs/vue";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +15,5 @@ export default defineConfig({
       }
     }
   },
-  integrations: [vue()]
+  integrations: [vue(), react()]
 });

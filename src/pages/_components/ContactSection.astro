@@ -1,6 +1,7 @@
 ---
 import ProfileSection from "./ProfileSection.vue";
 import TextLink from "@components/TextLink.vue";
+import { EnvelopeIcon, HomeIcon, GithubIcon } from "@components/Icons.tsx";
 
 export interface Props {
   contact: {
@@ -19,19 +20,17 @@ const { contact, class: className, ...rest } = Astro.props;
     <!-- Email -->
     <li>
       <TextLink class="row" href={`mailto:${contact.email}`}>
-        {contact.email}<i class="far fa-envelope fa-fw fa-lg" />
+        {contact.email}<EnvelopeIcon />
       </TextLink>
     </li>
-
     <!-- City, Country -->
     <li class="row">
-      {contact.city}, { contact.country }<i class="fas fa-home fa-fw fa-lg" />
+      {contact.city}, { contact.country }<HomeIcon />
     </li>
-
     <!-- GitHub -->
     <li>
       <TextLink class="row" href={`https://github.com/${contact.github}`} target="_blank">
-        github.com/{contact.github}<i class="fab fa-github fa-fw fa-lg" />
+        github.com/{contact.github}<GithubIcon />
       </TextLink>
     </li>
   </ul>
