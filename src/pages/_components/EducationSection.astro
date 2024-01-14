@@ -1,0 +1,52 @@
+---
+import ProfileSection from "./ProfileSection.vue";
+import TextLink from "@components/TextLink.vue";
+
+interface Props {
+  education: {
+    name: string;
+    degree: string;
+    timeperiod: string;
+    website: string;
+  }[];
+  class?: string;
+}
+
+const { education, class: className, ...rest } = Astro.props;
+---
+<ProfileSection class={className} {...rest}>
+  <Fragment slot="title">Education</Fragment>
+  <Fragment slot="default">
+    <section class="content">
+      {education.map(({ name, degree, timeperiod, website }) => (
+        <article>
+          <TextLink href={website}>
+            <h2 class="degree">{degree}</h2>
+            <p>{name}</p>
+            <p>{timeperiod}</p>
+          </TextLink>
+        </article>
+      ))}
+    </section>
+  </Fragment>
+</ProfileSection>
+
+<style lang="scss">
+@import "../variables";
+
+p {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xsmall;
+}
+
+.degree {
+  text-transform: uppercase;
+  font-size: $font-small;
+  margin: 0;
+}
+</style>
