@@ -74,7 +74,10 @@ export interface SkillContent {
   experience?: string;
 }
 
-export interface Qualification {}
+export interface Qualification {
+  name: string;
+  url: string;
+}
 
 export type Technics =
   | "Java"

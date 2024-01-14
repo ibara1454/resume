@@ -1,0 +1,24 @@
+---
+import ProfileSection from "./ProfileSection.vue";
+import TextLink from "@components/TextLink.vue";
+
+interface Props {
+  qualifications: {
+    name: string;
+    url: string;
+  }[];
+  class?: string;
+}
+
+const { qualifications, class: className, ...rest } = Astro.props;
+---
+<ProfileSection class={className} {...rest}>
+  <Fragment slot="title">Qualifications</Fragment>
+  <Fragment slot="default">
+    {qualifications.map(({ name, url }) => (
+      <TextLink href={url}>
+        {name}
+      </TextLink>
+    ))}
+  </Fragment>
+</ProfileSection>
