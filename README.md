@@ -52,3 +52,17 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## How to use
+
+Generate screenshots with [Playwright](https://playwright.dev/):
+
+```sh
+npx playwright test
+```
+
+Run visual regression tests with [RegSuit](https://github.com/reg-viz/reg-suit):
+
+```sh
+npx reg-suit run
+```
