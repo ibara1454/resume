@@ -17,7 +17,7 @@ import EducationSection from "./_components/EducationSection.astro";
   <Page class="resume page">
     <!-- The profile header -->
     <div class="left-header">
-      <Image class="avatar" src={avatarImage} alt="Avatar image" />
+      <Image class="avatar" src={avatarImage} alt="Avatar image" loading="eager" />
     </div>
     <div class="right-header">
       <ProfileTitle summary={data.summary} />
