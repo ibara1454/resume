@@ -1,0 +1,42 @@
+---
+interface Props {
+  summary: {
+    name: {
+      first: string;
+      last: string;
+    };
+    position: string;
+    about: string;
+  };
+  class?: string;
+}
+
+const { summary, class: className, ...rest } = Astro.props as Props;
+---
+
+<div class={className} ...{rest}>
+  <h1>
+    <span>{summary.name.first}</span>
+    <span>{summary.name.last}</span>
+  </h1>
+  <h2>{summary.position}</h2>
+  <p>{summary.about}</p>
+</div>
+
+<style lang="scss">
+@import "../variables";
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+h2 {
+  text-transform: uppercase;
+}
+</style>

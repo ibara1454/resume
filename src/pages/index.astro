@@ -4,12 +4,12 @@ import PageContainer from "@components/PageContainer.astro";
 import Page from "@components/Page.astro";
 import avatarImage from "@assets/images/avatar.jpg";
 import data from "@data/profile";
-import ProfileTitle from "./_components/ProfileTitle.vue";
 import ContactSection from './_components/ContactSection.astro';
 import QualificationSection from "./_components/QualificationSection.astro";
 import ExperienceSection from "./_components/ExperienceSection.astro";
 import EducationSection from "./_components/EducationSection.astro";
 import SkillSection from "./_components/SkillSection.astro";
+import TitleSection from "./_components/TitleSection.astro";
 
 ---
 
@@ -20,7 +20,7 @@ import SkillSection from "./_components/SkillSection.astro";
       <Image class="avatar" src={avatarImage} alt="Avatar image" loading="eager" />
     </div>
     <div class="right-header">
-      <ProfileTitle summary={data.summary} />
+      <TitleSection summary={data.summary} />
     </div>
 
     <!-- The side part -->
