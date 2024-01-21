@@ -6,10 +6,10 @@ import avatarImage from "@assets/images/avatar.jpg";
 import data from "@data/profile";
 import ProfileTitle from "./_components/ProfileTitle.vue";
 import ContactSection from './_components/ContactSection.astro';
-import ProfileSkills from "./_components/ProfileSkills.vue";
 import QualificationSection from "./_components/QualificationSection.astro";
 import ExperienceSection from "./_components/ExperienceSection.astro";
 import EducationSection from "./_components/EducationSection.astro";
+import SkillSection from "./_components/SkillSection.astro";
 
 ---
 
@@ -26,7 +26,7 @@ import EducationSection from "./_components/EducationSection.astro";
     <!-- The side part -->
     <aside class="left-body">
       <ContactSection class="contacts" contact={data.contact} />
-      <ProfileSkills class="skills" skills={data.skills} />
+      <SkillSection class="skills" skills={data.skills} />
       <QualificationSection
         class="qualifications"
         qualifications={data.qualifications}

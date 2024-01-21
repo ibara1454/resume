@@ -1,0 +1,61 @@
+---
+import ProfileSection from "./ProfileSection.vue";
+
+interface Props {
+  skills: {
+    description: string;
+    contents: {
+      name: string;
+      experience?: string;
+    }[];
+  }[];
+  class?: string;
+}
+
+const { skills, class: className, ...rest } = Astro.props;
+---
+<ProfileSection class={className} {...rest}>
+  <Fragment slot="title">Skills</Fragment>
+  <Fragment slot="default">
+    <section class="content">
+      {skills.map(({ description, contents }) => (
+        <article>
+          <h2 class="description">{description}</h2>
+          <ul>
+            {contents.map(({ name, experience }) => (
+              <li>
+                {experience && <span class="experience">({experience})</span>}
+                {name}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+  </Fragment>
+</ProfileSection>
+
+<style lang="scss">
+@import "../variables";
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-medium;
+}
+
+.description {
+  text-transform: uppercase;
+  font-size: $font-small;
+  margin: 0;
+}
+
+.experience {
+  margin-right: $space-xxsmall;
+}
+</style>
