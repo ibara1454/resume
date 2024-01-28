@@ -1,5 +1,5 @@
 ---
-import ProfileSection from "./Section.astro";
+import Section from "./Section.astro";
 import TextLink from "@components/TextLink.astro";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 const { qualifications, class: className, ...rest } = Astro.props;
 ---
-<ProfileSection class={className} {...rest}>
+<Section class={className} {...rest}>
   <Fragment slot="title">Qualifications</Fragment>
   <Fragment slot="default">
     {qualifications.map(({ name, url }) => (
@@ -21,4 +21,4 @@ const { qualifications, class: className, ...rest } = Astro.props;
       </TextLink>
     ))}
   </Fragment>
-</ProfileSection>
+</Section>

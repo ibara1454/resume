@@ -1,5 +1,5 @@
 ---
-import ProfileSection from "./Section.astro";
+import Section from "./Section.astro";
 
 interface Props {
   skills: {
@@ -14,7 +14,7 @@ interface Props {
 
 const { skills, class: className, ...rest } = Astro.props;
 ---
-<ProfileSection class={className} {...rest}>
+<Section class={className} {...rest}>
   <Fragment slot="title">Skills</Fragment>
   <Fragment slot="default">
     <section class="content">
@@ -33,7 +33,7 @@ const { skills, class: className, ...rest } = Astro.props;
       ))}
     </section>
   </Fragment>
-</ProfileSection>
+</Section>
 
 <style lang="scss">
 @import "../variables";

@@ -1,5 +1,5 @@
 ---
-import ProfileSection from "./Section.astro";
+import Section from "./Section.astro";
 import TextLink from "@components/TextLink.astro";
 import { EnvelopeIcon, HomeIcon, GithubIcon } from "@components/Icons.tsx";
 
@@ -15,7 +15,7 @@ export interface Props {
 
 const { contact, class: className, ...rest } = Astro.props;
 ---
-<ProfileSection class={className} {...rest}>
+<Section class={className} {...rest}>
   <ul>
     <!-- Email -->
     <li>
@@ -34,7 +34,7 @@ const { contact, class: className, ...rest } = Astro.props;
       </TextLink>
     </li>
   </ul>
-</ProfileSection>
+</Section>
 
 <style lang="scss">
 @import "../variables";

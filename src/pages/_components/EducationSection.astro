@@ -1,5 +1,5 @@
 ---
-import ProfileSection from "./Section.astro";
+import Section from "./Section.astro";
 import TextLink from "@components/TextLink.astro";
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 const { education, class: className, ...rest } = Astro.props;
 ---
-<ProfileSection class={className} {...rest}>
+<Section class={className} {...rest}>
   <Fragment slot="title">Education</Fragment>
   <Fragment slot="default">
     <section class="content">
@@ -29,7 +29,7 @@ const { education, class: className, ...rest } = Astro.props;
       ))}
     </section>
   </Fragment>
-</ProfileSection>
+</Section>
 
 <style lang="scss">
 @import "../variables";
