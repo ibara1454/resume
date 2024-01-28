@@ -11,6 +11,7 @@
         "EditorConfig.EditorConfig",
         "streetsidesoftware.code-spell-checker",
         "Codeium.codeium",
+        "codium.codium",
         "oderwat.indent-rainbow"
       ]
     }
