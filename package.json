@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "playwright test",
-    "test:update": "playwright test --update-snapshots"
+    "test:update": "playwright test --update-snapshots",
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
@@ -27,7 +28,13 @@
   "devDependencies": {
     "@playwright/test": "^1.41.0",
     "@types/node": "^20.11.4",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
     "prettier": "3.2.4",
     "sass": "^1.69.7"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,css,md}": "prettier --write"
   }
 }
