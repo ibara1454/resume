@@ -1,6 +1,6 @@
 ---
-import Section from "./Section.astro";
-import TextLink from "@components/TextLink.astro";
+import Section from './Section.astro';
+import TextLink from '@components/TextLink.astro';
 
 interface Props {
   education: {
@@ -14,39 +14,42 @@ interface Props {
 
 const { education, class: className, ...rest } = Astro.props;
 ---
+
 <Section class={className} {...rest}>
   <Fragment slot="title">Education</Fragment>
   <Fragment slot="default">
     <section class="content">
-      {education.map(({ name, degree, timeperiod, website }) => (
-        <article>
-          <TextLink href={website}>
-            <h2 class="degree">{degree}</h2>
-            <p>{name}</p>
-            <p>{timeperiod}</p>
-          </TextLink>
-        </article>
-      ))}
+      {
+        education.map(({ name, degree, timeperiod, website }) => (
+          <article>
+            <TextLink href={website}>
+              <h2 class="degree">{degree}</h2>
+              <p>{name}</p>
+              <p>{timeperiod}</p>
+            </TextLink>
+          </article>
+        ))
+      }
     </section>
   </Fragment>
 </Section>
 
 <style lang="scss">
-@import "../variables";
+  @import '../variables';
 
-p {
-  margin: 0;
-}
+  p {
+    margin: 0;
+  }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: $space-xsmall;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xsmall;
+  }
 
-.degree {
-  text-transform: uppercase;
-  font-size: $font-small;
-  margin: 0;
-}
+  .degree {
+    text-transform: uppercase;
+    font-size: $font-small;
+    margin: 0;
+  }
 </style>

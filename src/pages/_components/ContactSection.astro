@@ -1,7 +1,7 @@
 ---
-import Section from "./Section.astro";
-import TextLink from "@components/TextLink.astro";
-import { EnvelopeIcon, HomeIcon, GithubIcon } from "@components/Icons.tsx";
+import Section from './Section.astro';
+import TextLink from '@components/TextLink.astro';
+import { EnvelopeIcon, HomeIcon, GithubIcon } from '@components/Icons.tsx';
 
 export interface Props {
   contact: {
@@ -15,6 +15,7 @@ export interface Props {
 
 const { contact, class: className, ...rest } = Astro.props;
 ---
+
 <Section class={className} {...rest}>
   <ul>
     <!-- Email -->
@@ -25,7 +26,7 @@ const { contact, class: className, ...rest } = Astro.props;
     </li>
     <!-- City, Country -->
     <li class="row">
-      {contact.city}, { contact.country }<HomeIcon />
+      {contact.city}, {contact.country}<HomeIcon />
     </li>
     <!-- GitHub -->
     <li>
@@ -37,21 +38,21 @@ const { contact, class: className, ...rest } = Astro.props;
 </Section>
 
 <style lang="scss">
-@import "../variables";
+  @import '../variables';
 
-ul {
-  margin: 0;
-  list-style: none;
+  ul {
+    margin: 0;
+    list-style: none;
 
-  display: flex;
-  flex-direction: column;
-  gap: $space-small;
-}
+    display: flex;
+    flex-direction: column;
+    gap: $space-small;
+  }
 
-.row {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: $space-xsmall;
-}
+  .row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: $space-xsmall;
+  }
 </style>

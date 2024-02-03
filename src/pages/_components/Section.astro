@@ -8,26 +8,30 @@ const { slots } = Astro;
 ---
 
 <section class={className} {...rest}>
-  {slots.has('title') && <h1>
-    <slot name="title"></slot>
-  </h1>}
+  {
+    slots.has('title') && (
+      <h1>
+        <slot name="title" />
+      </h1>
+    )
+  }
   <main>
-    <slot></slot>
+    <slot />
   </main>
 </section>
 
 <style lang="scss">
-@import "../variables";
+  @import '../variables';
 
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: $font-xlarge;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 0 0 $space-xsmall 0;
-}
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-xlarge;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 $space-xsmall 0;
+  }
 
-main {
-  font-size: $font-small;
-}
+  main {
+    font-size: $font-small;
+  }
 </style>

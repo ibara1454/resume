@@ -1,5 +1,5 @@
 ---
-import Section from "./Section.astro";
+import Section from './Section.astro';
 
 interface Props {
   skills: {
@@ -14,48 +14,51 @@ interface Props {
 
 const { skills, class: className, ...rest } = Astro.props;
 ---
+
 <Section class={className} {...rest}>
   <Fragment slot="title">Skills</Fragment>
   <Fragment slot="default">
     <section class="content">
-      {skills.map(({ description, contents }) => (
-        <article>
-          <h2 class="description">{description}</h2>
-          <ul>
-            {contents.map(({ name, experience }) => (
-              <li>
-                {experience && <span class="experience">({experience})</span>}
-                {name}
-              </li>
-            ))}
-          </ul>
-        </article>
-      ))}
+      {
+        skills.map(({ description, contents }) => (
+          <article>
+            <h2 class="description">{description}</h2>
+            <ul>
+              {contents.map(({ name, experience }) => (
+                <li>
+                  {experience && <span class="experience">({experience})</span>}
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
     </section>
   </Fragment>
 </Section>
 
 <style lang="scss">
-@import "../variables";
+  @import '../variables';
 
-ul {
-  margin: 0;
-  list-style: none;
-}
+  ul {
+    margin: 0;
+    list-style: none;
+  }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: $space-medium;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-medium;
+  }
 
-.description {
-  text-transform: uppercase;
-  font-size: $font-small;
-  margin: 0;
-}
+  .description {
+    text-transform: uppercase;
+    font-size: $font-small;
+    margin: 0;
+  }
 
-.experience {
-  margin-right: $space-xxsmall;
-}
+  .experience {
+    margin-right: $space-xxsmall;
+  }
 </style>

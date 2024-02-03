@@ -6,18 +6,19 @@ interface Props {
 
 const { href, class: className, ...rest } = Astro.props;
 ---
+
 <a href={href} class={className} {...rest} target="_blank">
   <slot />
 </a>
 
 <style>
-a {
-  color: inherit;
-  cursor: pointer;
-  text-decoration-line: none;
-
-  &:visited {
+  a {
     color: inherit;
+    cursor: pointer;
+    text-decoration-line: none;
+
+    &:visited {
+      color: inherit;
+    }
   }
-}
 </style>

@@ -1,6 +1,6 @@
 ---
-import Section from "./Section.astro";
-import TextLink from "@components/TextLink.astro";
+import Section from './Section.astro';
+import TextLink from '@components/TextLink.astro';
 
 interface Props {
   experience: {
@@ -16,57 +16,71 @@ interface Props {
 
 const { experience, class: className, ...rest } = Astro.props;
 ---
+
 <Section class={className} {...rest}>
   <Fragment slot="title">Experience</Fragment>
   <Fragment slot="default">
     <section class="content">
-      {experience.map(({ position, company, timeperiod, website, description, activities }) => (
-        <article>
-          <h2 class="position">{position}</h2>
-          <TextLink href={website}>
-            <h3 class="company">{company} | <span class="timeperiod">{timeperiod}</span></h3>
-          </TextLink>
-          <p class="description">{description}</p>
-          <ul class="activities">
-            {activities.map((activity) => (
-              <li class="activity">{activity}</li>
-            ))}
-          </ul>
-        </article>
-      ))}
+      {
+        experience.map(
+          ({
+            position,
+            company,
+            timeperiod,
+            website,
+            description,
+            activities,
+          }) => (
+            <article>
+              <h2 class="position">{position}</h2>
+              <TextLink href={website}>
+                <h3 class="company">
+                  {company} | <span class="timeperiod">{timeperiod}</span>
+                </h3>
+              </TextLink>
+              <p class="description">{description}</p>
+              <ul class="activities">
+                {activities.map((activity) => (
+                  <li class="activity">{activity}</li>
+                ))}
+              </ul>
+            </article>
+          ),
+        )
+      }
     </section>
   </Fragment>
 </Section>
 
 <style lang="scss">
-@import "../variables";
+  @import '../variables';
 
-h2,
-h3,
-p {
-  margin: 0;
-}
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
 
-h2 {
-  text-transform: uppercase;
-  font-size: $font-medium;
-}
+  h2 {
+    text-transform: uppercase;
+    font-size: $font-medium;
+  }
 
-h3 {
-  font-size: $font-medium;
-}
+  h3 {
+    font-size: $font-medium;
+  }
 
-ul {
-  margin: 0;
-}
+  ul {
+    margin: 0;
+  }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: $space-small;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-small;
+  }
 
-.company {
-  color: $accent-color;
-}
+  .company {
+    color: $accent-color;
+  }
 </style>
