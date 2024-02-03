@@ -3,21 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@utils/*": ["src/utils/*"],
+      "@assets/*": ["src/assets/*"],
+      "@data/*": ["src/data/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
