@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 // Using Vite on Windows Subsystem for Linux (WSL) 2
 // https://vitejs.dev/config/server-options.html#server-watch
 // Note that usePolling leads to high CPU utilization.
-import vue from '@astrojs/vue';
 import react from '@astrojs/react';
 
 // https://astro.build/config
@@ -15,5 +14,5 @@ export default defineConfig({
       },
     },
   },
-  integrations: [vue(), react()],
+  integrations: [react()],
 });
