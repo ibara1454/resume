@@ -13,7 +13,8 @@
         "Codeium.codeium",
         "codium.codium",
         "oderwat.indent-rainbow",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "eamodio.gitlens"
       ]
     }
   },
