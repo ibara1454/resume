@@ -14,7 +14,7 @@ interface Props {
 const { summary, class: className, ...rest } = Astro.props as Props;
 ---
 
-<div class={className} ...{rest}>
+<div class={className} {...rest}>
   <h1>
     <span>{summary.name.first}</span>
     <span>{summary.name.last}</span>
