@@ -5,6 +5,8 @@ import { defineConfig } from 'astro/config';
 // Note that usePolling leads to high CPU utilization.
 import react from '@astrojs/react';
 
+import tailwind from '@astrojs/tailwind';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -14,5 +16,5 @@ export default defineConfig({
       },
     },
   },
-  integrations: [react()],
+  integrations: [react(), tailwind()],
 });

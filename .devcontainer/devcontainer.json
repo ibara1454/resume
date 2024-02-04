@@ -14,7 +14,8 @@
         "codium.codium",
         "oderwat.indent-rainbow",
         "esbenp.prettier-vscode",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   },
