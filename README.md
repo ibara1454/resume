@@ -55,6 +55,12 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## How to use
 
+Install dependent libraries for Playwright:
+
+```sh
+npx playwright install --with-deps chromium
+```
+
 Run visual regression tests with [Playwright](https://playwright.dev/):
 
 ```sh
