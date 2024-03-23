@@ -1,0 +1,19 @@
+---
+import style from './Section.module.css';
+
+interface Props {
+  title?: string;
+  class?: string;
+  noBreak?: boolean;
+}
+
+const { title, noBreak, class: className, ...rest } = Astro.props;
+---
+
+<section
+  class:list={[className, { [style.noBreak]: noBreak }]}
+  title={title}
+  {...rest}
+>
+  <slot />
+</section>

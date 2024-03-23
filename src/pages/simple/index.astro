@@ -1,0 +1,19 @@
+---
+import PrintableLayout from '@components/PrintableLayout.astro';
+import CertificatesSection from './_components/CertificatesSection.astro';
+import ProfileSection from './_components/ProfileSection.astro';
+import EducationSection from './_components/EducationSection.astro';
+import WorkExperienceSection from './_components/WorkExperienceSection.astro';
+import SkillsSection from './_components/SkillsSection.astro';
+import VStack from './_components/VStack.astro';
+---
+
+<PrintableLayout class="px-12 py-8">
+  <VStack gap="4">
+    <ProfileSection />
+    <WorkExperienceSection />
+    <EducationSection />
+    <SkillsSection />
+    <CertificatesSection />
+  </VStack>
+</PrintableLayout>

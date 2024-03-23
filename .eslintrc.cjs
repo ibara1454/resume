@@ -26,6 +26,12 @@ module.exports = {
         // "astro/no-set-html-directive": "error"
       },
     },
-    // ...
+    {
+      // Define the configuration for `.ts` file.
+      files: ['*.ts'],
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint'],
+      extends: ['plugin:@typescript-eslint/recommended'],
+    },
   ],
 };

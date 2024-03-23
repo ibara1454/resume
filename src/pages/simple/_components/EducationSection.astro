@@ -1,0 +1,39 @@
+---
+import Section from '@components/Section.astro';
+import Title from './Title.astro';
+import HStack from './HStack.astro';
+import Badge from './Badge.astro';
+import EducationWorkExperienceItem from './EducationWorkExperienceItem.astro';
+import VStack from './VStack.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<Section class={className} noBreak {...rest}>
+  <Title level="section" text="Education" />
+  <!-- <HStack gap="1" wrap>
+    <Badge text="University of Washington" />
+    <Badge text="Bachelor of Science" />
+    <Badge text="Computer Science" />
+  </HStack> -->
+  <VStack gap="2">
+    <EducationWorkExperienceItem
+      title="University of Tsukuba"
+      startPeriod="2015"
+      endPeriod="2018"
+      description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus."
+      url="https://www.tsukuba.ac.jp/"
+    />
+    <EducationWorkExperienceItem
+      title="Fu Jen Catholic University"
+      startPeriod="2012"
+      endPeriod="2007"
+      description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus."
+      url="https://www.tsukuba.ac.jp/"
+    />
+  </VStack>
+</Section>

@@ -1,7 +1,37 @@
 ---
+import avatarImage from '@assets/images/avatar.jpg';
 import Section from '@components/Section.astro';
+import Text from './Text.astro';
+import Title from './Title.astro';
+import HStack from './HStack.astro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import IconLink from '@components/IconLink.astro';
+import VStack from './VStack.astro';
+import Avatar from './Avatar.astro';
 ---
 
 <Section noBreak>
-  <h1>Name</h1>
+  <HStack gap="2" verticalAlign="center">
+    <VStack>
+      <Title level="page" text="Chiajun Wang" />
+      <Text
+        text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      />
+      <HStack gap="1" class="mt-2">
+        <IconLink href="mailto:ibara1454@gmail.com">
+          <FontAwesomeIcon icon={faEnvelope} />
+        </IconLink>
+        <IconLink href="https://github.com/ibara1454">
+          <FontAwesomeIcon icon={faGithub} />
+        </IconLink>
+        <IconLink href="https://www.linkedin.com/in/ibara1454">
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </IconLink>
+      </HStack>
+    </VStack>
+
+    <Avatar src={avatarImage} alt="Avatar image" />
+  </HStack>
 </Section>

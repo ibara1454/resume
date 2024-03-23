@@ -64,5 +64,11 @@ npx playwright install --with-deps chromium
 Run visual regression tests with [Playwright](https://playwright.dev/):
 
 ```sh
-npx playwright test
+npm run test
+```
+
+Update saved screenshots:
+
+```sh
+npm run test:update
 ```

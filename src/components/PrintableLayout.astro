@@ -1,0 +1,13 @@
+---
+import style from './PrintableLayout.module.css';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={[className, style.printableLayout]} {...rest}>
+  <slot />
+</div>

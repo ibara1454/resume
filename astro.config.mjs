@@ -13,8 +13,14 @@ export default defineConfig({
     server: {
       watch: {
         usePolling: true,
+        interval: 1000, // default: 100
+        binaryInterval: 1500, // default: 300
       },
     },
+  },
+  // https://docs.astro.build/en/reference/configuration-reference/#devtoolbarenabled
+  devToolbar: {
+    enabled: false,
   },
   integrations: [react(), tailwind()],
 });

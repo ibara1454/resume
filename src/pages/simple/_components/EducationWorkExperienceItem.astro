@@ -1,0 +1,48 @@
+---
+import clsx from 'clsx';
+import Text from './Text.astro';
+import Title from './Title.astro';
+import HStack from './HStack.astro';
+import VStack from './VStack.astro';
+
+interface Props {
+  title: string;
+  subTitle?: string;
+  startPeriod: string;
+  endPeriod: string;
+  description: string;
+  url: string;
+  class?: string;
+}
+
+const {
+  class: className,
+  title,
+  subTitle,
+  startPeriod,
+  endPeriod,
+  description,
+  url,
+  ...rest
+} = Astro.props;
+---
+
+<article class={clsx([className])} {...rest}>
+  <HStack
+    class="w-full mb-1"
+    horizontalAlign="space-between"
+    verticalAlign="end"
+  >
+    <a
+      class="hover:underline"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Title level="item" text={title} />
+    </a>
+    <Text size="lg" text={`${startPeriod} - ${endPeriod}`} />
+  </HStack>
+  {subTitle && <Title level="subitem" text={subTitle} />}
+  <Text text={description} />
+</article>
