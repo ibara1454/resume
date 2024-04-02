@@ -1,16 +1,10 @@
 ---
+import type { Experience } from '@data/profile';
 import Section from './Section.astro';
 import TextLink from '@components/TextLink.astro';
 
 interface Props {
-  experience: {
-    position: string;
-    company: string;
-    timeperiod: string;
-    website: string;
-    description: string;
-    activities: string[];
-  }[];
+  experience: Experience[];
   class?: string;
 }
 
@@ -23,22 +17,17 @@ const { experience, class: className, ...rest } = Astro.props;
     <section class="content">
       {
         experience.map(
-          ({
-            position,
-            company,
-            timeperiod,
-            website,
-            description,
-            activities,
-          }) => (
+          ({ jobTitle, company, startDate, endDate, website, activities }) => (
             <article>
-              <h2 class="position">{position}</h2>
               <TextLink href={website}>
                 <h3 class="company">
-                  {company} | <span class="timeperiod">{timeperiod}</span>
+                  {company} |{' '}
+                  <span class="timeperiod">
+                    {startDate} - {endDate}
+                  </span>
                 </h3>
               </TextLink>
-              <p class="description">{description}</p>
+              <h2 class="position">{jobTitle}</h2>
               <ul class="activities">
                 {activities.map((activity) => (
                   <li class="activity">{activity}</li>

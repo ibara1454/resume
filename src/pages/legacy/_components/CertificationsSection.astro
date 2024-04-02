@@ -1,24 +1,22 @@
 ---
+import type { Certification } from '@data/profile';
 import Section from './Section.astro';
 import TextLink from '@components/TextLink.astro';
 
 interface Props {
-  qualifications: {
-    name: string;
-    url: string;
-  }[];
+  certifications: Certification[];
   class?: string;
 }
 
-const { qualifications, class: className, ...rest } = Astro.props;
+const { certifications, class: className, ...rest } = Astro.props;
 ---
 
 <Section class={className} {...rest}>
   <Fragment slot="title">Qualifications</Fragment>
   <Fragment slot="default">
     {
-      qualifications.map(({ name, url }) => (
-        <TextLink href={url}>{name}</TextLink>
+      certifications.map(({ title, url }) => (
+        <TextLink href={url}>{title}</TextLink>
       ))
     }
   </Fragment>

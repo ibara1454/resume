@@ -3,47 +3,64 @@ import { Image } from 'astro:assets';
 import PageContainer from '@components/PageContainer.astro';
 import Page from '@components/Page.astro';
 import avatarImage from '@assets/images/avatar.jpg';
-import data from '@data/profile';
+import { profile } from '@data/profile';
 import ContactSection from './_components/ContactSection.astro';
-import QualificationSection from './_components/QualificationSection.astro';
+import CertificationsSection from './_components/CertificationsSection.astro';
 import ExperienceSection from './_components/ExperienceSection.astro';
 import EducationSection from './_components/EducationSection.astro';
 import SkillSection from './_components/SkillSection.astro';
 import TitleSection from './_components/TitleSection.astro';
+import Layout from '@layouts/Layout.astro';
+
+const { summary, contact, experience, education, skills, certifications } =
+  profile;
 ---
 
-<PageContainer>
-  <Page class="resume page">
-    <!-- The profile header -->
-    <div class="left-header">
-      <Image
-        class="avatar"
-        src={avatarImage}
-        alt="Avatar image"
-        loading="eager"
-      />
-    </div>
-    <div class="right-header">
-      <TitleSection summary={data.summary} />
-    </div>
+<Layout title="Resume">
+  <PageContainer>
+    <Page class="resume page">
+      <!-- The profile header -->
+      <div class="left-header">
+        <Image
+          class="avatar"
+          src={avatarImage}
+          alt="Avatar image"
+          loading="eager"
+        />
+      </div>
+      <div class="right-header">
+        <TitleSection
+          firstName={summary.name.first}
+          lastName={summary.name.last}
+          position={summary.jobTitle}
+          description={summary.about}
+        />
+      </div>
 
-    <!-- The side part -->
-    <aside class="left-body">
-      <ContactSection class="contacts" contact={data.contact} />
-      <SkillSection class="skills" skills={data.skills} />
-      <QualificationSection
-        class="qualifications"
-        qualifications={data.qualifications}
-      />
-    </aside>
+      <!-- The side part -->
+      <aside class="left-body">
+        <ContactSection
+          class="contacts"
+          email={contact.email}
+          city={contact.city}
+          country={contact.country}
+          github={contact.githubId}
+        />
+        <SkillSection class="skills" skills={skills.map((item) => item.name)} />
+        <CertificationsSection
+          class="qualifications"
+          certifications={certifications}
+        />
+      </aside>
 
-    <!-- The main part -->
-    <section class="right-body">
-      <ExperienceSection class="experience" experience={data.experience} />
-      <EducationSection class="education" education={data.education} />
-    </section>
-  </Page>
-</PageContainer>
+      <!-- The main part -->
+      <section class="right-body">
+        <ExperienceSection class="experience" experience={experience} />
+        <EducationSection class="education" education={education} />
+      </section>
+    </Page>
+  </PageContainer>
+</Layout>
 
 <style lang="scss" is:global>
   @import './variables';

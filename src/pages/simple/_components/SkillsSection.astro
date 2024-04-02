@@ -5,30 +5,16 @@ import HStack from './HStack.astro';
 import Badge from './Badge.astro';
 
 interface Props {
+  skills: string[];
   class?: string;
 }
 
-const { class: className, ...rest } = Astro.props;
+const { skills, class: className, ...rest } = Astro.props;
 ---
 
 <Section class={className} noBreak {...rest}>
   <Title level="section" text="Skills" />
   <HStack gap="1" wrap>
-    <Badge text="JavaScript" accent />
-    <Badge text="TypeScript" accent />
-    <Badge text="Node.js" accent />
-    <Badge text="React.js" accent />
-    <Badge text="Next.js" accent />
-    <Badge text="Vue.js" accent />
-    <Badge text="Tailwind CSS" accent />
-    <Badge text="GraphQL" accent />
-    <Badge text="Android" accent />
-    <Badge text="Jetpack Compose" accent />
-    <Badge text=" Kotlin" accent />
-    <Badge text="Kubernetes" accent />
-    <Badge text="Go" accent />
-    <Badge text="PHP" accent />
-    <Badge text="Python" accent />
-    <Badge text="Ruby" accent />
+    {skills.map((item) => <Badge text={item} accent />)}
   </HStack>
 </Section>

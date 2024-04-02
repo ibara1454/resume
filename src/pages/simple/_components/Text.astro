@@ -26,7 +26,7 @@ const {
 <p
   class={clsx([
     className,
-    'font-mono text-base font-normal leading-normal text-gray-500',
+    'font-mono font-normal leading-normal ',
     {
       'text-xs': size === 'sm',
       'text-sm': size === 'md',
@@ -36,6 +36,10 @@ const {
       'text-wrap': wrap === 'wrap',
       'text-nowrap': wrap === 'nowrap',
       'text-balance': wrap === 'balance',
+    },
+    {
+      'text-black': accent,
+      'text-gray-500': !accent,
     },
   ])}
   {...rest}

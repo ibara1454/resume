@@ -8,48 +8,39 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export interface Props {
-  contact: {
-    email: string;
-    city: string;
-    country: string;
-    github: string;
-  };
+  email: string;
+  city: string;
+  country: string;
+  github?: string;
   class?: string;
 }
 
-const { contact, class: className, ...rest } = Astro.props;
+const { email, city, country, github, class: className, ...rest } = Astro.props;
 ---
 
 <Section class={className} {...rest}>
   <ul>
     <!-- Email -->
     <li>
-      <TextLink class="row" href={`mailto:${contact.email}`}>
-        {contact.email}<FontAwesomeIcon
-          icon={faEnvelope}
-          fixedWidth
-          size="lg"
-        />
+      <TextLink class="row" href={`mailto:${email}`}>
+        {email}<FontAwesomeIcon icon={faEnvelope} fixedWidth size="lg" />
       </TextLink>
     </li>
     <!-- City, Country -->
     <li class="row">
-      {contact.city}, {contact.country}<FontAwesomeIcon
-        icon={faHome}
-        fixedWidth
-        size="lg"
-      />
+      {city}, {country}<FontAwesomeIcon icon={faHome} fixedWidth size="lg" />
     </li>
     <!-- GitHub -->
-    <li>
-      <TextLink class="row" href={`https://github.com/${contact.github}`}>
-        github.com/{contact.github}<FontAwesomeIcon
-          icon={faGithub}
-          fixedWidth
-          size="lg"
-        />
-      </TextLink>
-    </li>
+    {
+      github && (
+        <li>
+          <TextLink class="row" href={`https://github.com/${github}`}>
+            github.com/{github}
+            <FontAwesomeIcon icon={faGithub} fixedWidth size="lg" />
+          </TextLink>
+        </li>
+      )
+    }
   </ul>
 </Section>
 

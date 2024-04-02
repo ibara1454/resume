@@ -1,14 +1,10 @@
 ---
+import type { Education } from '@data/profile';
 import Section from './Section.astro';
 import TextLink from '@components/TextLink.astro';
 
 interface Props {
-  education: {
-    name: string;
-    degree: string;
-    timeperiod: string;
-    website: string;
-  }[];
+  education: Education[];
   class?: string;
 }
 
@@ -20,12 +16,14 @@ const { education, class: className, ...rest } = Astro.props;
   <Fragment slot="default">
     <section class="content">
       {
-        education.map(({ name, degree, timeperiod, website }) => (
+        education.map(({ name, degree, startDate, endDate, website }) => (
           <article>
             <TextLink href={website}>
               <h2 class="degree">{degree}</h2>
               <p>{name}</p>
-              <p>{timeperiod}</p>
+              <p>
+                {startDate} - {endDate}
+              </p>
             </TextLink>
           </article>
         ))

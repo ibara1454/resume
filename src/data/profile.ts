@@ -1,16 +1,16 @@
-export interface PersonalData {
+export interface Profile {
   summary: Summary;
-  birth: Birth;
   contact: Contact;
-  experience: Array<Experience>;
-  education: Array<Education>;
-  skills: Array<Skill>;
-  qualifications: Array<Qualification>;
+  experience: Experience[];
+  education: Education[];
+  skills: Skill[];
+  certifications: Certification[];
 }
 
 export interface Summary {
   name: Name;
-  position: string;
+  jobTitle: string;
+  languages: string[];
   about: string;
 }
 
@@ -20,286 +20,182 @@ export interface Name {
   last: string;
 }
 
-export interface Birth {
-  year: string;
-  month: string;
-  day: string;
-}
-
 export interface Contact {
-  email: string;
-  phone: string;
-  github: string;
-  country: string;
   city: string;
+  country: string;
+  email: string;
+  githubId?: string;
+  linkedInId?: string;
+  websiteUrl?: string;
 }
 
 export interface Experience {
-  position: string;
+  jobTitle: string;
   company: string;
-  timeperiod: string;
-  description: string;
+  startDate: string;
+  endDate: string;
+  techStack: string[];
+  activities: string[];
   website: string;
-  activities: Array<string>;
-}
-
-export interface Position {
-  name: string;
-  timeperiod: string;
-  description: string;
-  projects: Array<Project>;
-}
-
-interface Project {
-  name: string;
-  description: string;
-  technics: Array<Technics>;
 }
 
 export interface Education {
   name: string;
   degree: string;
-  timeperiod: string;
+  startDate: string;
+  endDate: string;
   website: string;
 }
 
 export interface Skill {
-  category: string;
+  name: string;
+  level: string;
+}
+
+export interface Certification {
+  title: string;
   description: string;
-  contents: Array<SkillContent>;
-}
-
-export interface SkillContent {
-  name: string;
-  experience?: string;
-}
-
-export interface Qualification {
-  name: string;
   url: string;
+  imageUrl?: string;
 }
 
-export type Technics =
-  | 'Java'
-  | 'Kotlin'
-  | 'Android'
-  | 'Node.js'
-  | 'Express.js'
-  | 'JavaScript'
-  | 'TypeScript'
-  | 'Spring Boot'
-  | 'Ruby'
-  | 'Python'
-  | 'Ruby on Rails'
-  | 'ReactiveX'
-  | 'Vue'
-  | 'React'
-  | 'C++'
-  | 'C'
-  | 'C#'
-  | 'Kubernetes';
-
-const data = {
+export const profile: Profile = {
   summary: {
     name: {
       first: 'Chiajun',
       last: 'Wang',
     },
-    position: 'Android / Frontend Developer',
+    jobTitle: 'Full Stack Engineer',
+    languages: ['Japanese', 'English', 'Chinese'],
     about:
-      'Have 2+ years work experience of Android and 1+ year work experience of frontend. Familiar with many famous architectures and design patterns, and extremely good at writing clean code.',
-  },
-  birth: {
-    year: '1989',
-    month: '02',
-    day: '20',
+      'Experienced Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
   },
   contact: {
-    email: 'ibara1454@gmail.com',
-    phone: '+81-80-5884-0145',
-    street: 'Setagaya',
-    country: 'Japan',
     city: 'Tokyo',
-    github: 'ibara1454',
+    country: 'Japan',
+    email: 'ibara1454@gmail.com',
+    githubId: 'ibara1454',
+    linkedInId: 'ibara1454',
   },
   experience: [
     {
-      position: 'Frontend Engineer',
-      company: 'Yahoo Japan Corporation',
-      timeperiod: '2020.08 - Present',
-      description:
-        'Project "Yahoo Mail Web". Worked with a team of about 15 members. Renewed the old "Yahoo Mail" website and refactored the related backend servers.',
-      website: 'https://about.yahoo.co.jp/',
+      jobTitle:
+        'Backend/Frontend Engineer → Android Engineer → Frontend Engineer',
+      company: 'Mercari Inc.',
+      startDate: '2021.11',
+      endDate: 'Present',
       activities: [
-        'Technology stack: React, Redux, TypeScript, Node.js and Kubernetes',
-        'Tech lead',
-        'In charge of designing error handling, performance optimizing and difficult tasks',
-        'Improved the performance score in Lighthouse over than 200%',
+        '(Mercari CS Tool) Worked as a frontend/backend engineer on a multi-platform team which had around 10 members.',
+        '(Mercari CS Tool) Migrated the "Mercari CS Tool" from the legacy backend codebase using GraphQL.',
+        '(Mercari CS Tool) Led the team to improve development efficiency using Skaffold, resulting in significantly increased productivity.',
+        '(Mercari Android) Worked as an Android engineer on a multi-platform team which had around 8 members. (2~3 Android engineers)',
+        '(Mercari Android) Helped and guided junior Android engineers, helping them develop their skills and knowledge.',
+        '(Mercari Android) Collaborated effectively with designers and product owners to enhance user experience for new projects.',
+        '(Mercari Web) Working as a frontend engineer on a frontend team which has around 8 members.',
+        '(Mercari Web) Played a key role in the success of cross-team projects by leveraging deep understanding of each team to effectively coordinate efforts and deliver results.',
+      ],
+      website: 'https://about.mercari.com/',
+      techStack: [
+        'PHP',
+        'Go',
+        'GraphQL',
+        'Kubernetes',
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Next.js',
+        'Node.js',
+        'Kotlin',
+        'Android',
+        'Jetpack Compose',
       ],
     },
     {
-      position: 'Android Engineer',
+      jobTitle: 'Android Engineer → Frontend Engineer',
       company: 'Yahoo Japan Corporation',
-      timeperiod: '2018.10 - 2020.07',
-      description:
-        'Project "Yahoo Mail Android". Worked with a team of about 13 members. Developed the "Yahoo Mail" android application and maintained the related backend servers.',
-      website: 'https://about.yahoo.co.jp/',
+      startDate: '2018.04',
+      endDate: '2021.10',
       activities: [
-        'Technology stack: Java, Kotlin, RxJava, Kotlin Coroutine and Android Architecture Components',
-        'Implemented user authentication (OpenID Connect)',
-        'Implemented a IMAP client which supports concurrent mode',
+        '(Yahoo! Mail Android) Worked as an Android engineer with around 10 members.',
+        '(Yahoo! Mail Android) Implemented features such as OpenID Connect authorization and IMAP client.',
+        '(Yahoo! Mail Android) Improved test automation/linter. Set up CI/CD configuration/build variants.',
+        '(Yahoo! Mail Android) Organized workshops regularly to help the team members improve their skills.',
+        '(Yahoo! Mail Web) Worked as a frontend engineer/tech leader with around 10 members and led the team in technical decisions.',
+        '(Yahoo! Mail Web) Worked on migrating the old "Yahoo! Mail" service using React.',
+        '(Yahoo! Mail Web) In charge of the most complicated/difficult tasks in the project.',
+        '(Yahoo! Mail Web) Designed the backend architecture for "Yahoo! Mail Web React Renewal" project using Kubernetes.',
+        '(Yahoo! Mail Web) Led the decision to improve the Core Web Vitals score by applying performance optimizations, resulting in a 100%+ improvement in score.',
+      ],
+      website: 'https://about.yahoo.co.jp/',
+      techStack: [
+        'Java',
+        'Kotlin',
+        'Android',
+        'Node.js',
+        'Kubernetes',
+        'TypeScript',
+        'React',
+        'Node.js',
       ],
     },
   ],
-  experience_details: {
-    company: 'Yahoo Japan Corporation',
-    website: 'https://about.yahoo.co.jp/',
-    history: [
-      {
-        timeperiod: '2018.04 - 2018.09',
-        description: '新卒入社.',
-      },
-      {
-        timeperiod: '2018.10 - 2020.09',
-        description:
-          '学生向けの DevRel プロジェクト「Hack U」所属. 学生向けにワークショップ及びハッカソンイベントを企画する業務を担当.',
-      },
-      {
-        timeperiod: '2019.10 - 2020.09',
-        description:
-          'エンジニア向けの DevRel プロジェクト「Tech Meetup」所属. エンジニア向けに勉強会を企画する業務を担当.',
-      },
-      {
-        timeperiod: '2018.10 - 2020.07',
-        tech: [
-          'Android',
-          'Kotlin',
-          'Java',
-          'Node.js',
-          'Spring Boot',
-          'RxJS / RxJava',
-        ],
-        description:
-          'アクティブデバイス数 400 万の「ヤフーメール Android」アプリ及びバックエンドサーバの開発・運用を担当.',
-        tasks: [
-          'IMAP クライアント作成',
-          '認証処理再実装',
-          'メールリストリニューアル',
-        ],
-      },
-      {
-        timeperiod: '2020.08 - Present',
-        tech: ['JavaScript', 'TypeScript', 'React', 'Kubernetes'],
-        description:
-          'ヤフーメール Web 版の新規 Web コンポーネントの開発 / 技術サポートを担当.',
-        tasks: [
-          'モダン開発環境構築',
-          'React による新規 UI 開発',
-          'Kubernetes によるシステム構築',
-        ],
-      },
-    ],
-  },
   education: [
     {
       name: 'University of Tsukuba',
       degree: 'Master of Engineering in Computer Science',
-      // degree: "M.Eng. in Computer Science",
-      timeperiod: '2016.04 - 2018.03',
+      startDate: '2016.04',
+      endDate: '2018.03',
       website: 'https://www.tsukuba.ac.jp/',
     },
     {
       name: 'Fu Jen Catholic University',
       degree: 'Bachelor of Science in Mathematics',
-      // degree: "B.S. in Mathematics",
-      timeperiod: '2007.09 - 2012.06',
+      startDate: '2007.09',
+      endDate: '2012.06',
       website: 'https://www.fju.edu.tw/',
     },
   ],
   skills: [
-    {
-      category: 'Programming Languages / Frameworks',
-      description: 'Familiar with',
-      contents: [
-        { name: 'JavaScript', experience: '7 years' },
-        { name: 'TypeScript', experience: '4 years' },
-        { name: 'Java', experience: '3 years' },
-        { name: 'Kotlin', experience: '2 years' },
-        { name: 'Python', experience: '3 years' },
-        { name: 'Node.js', experience: '4 years' },
-        { name: 'Kotlin Coroutine' },
-        { name: 'ReactiveX' },
-      ],
-    },
-    {
-      category: 'Programming Languages / Frameworks',
-      description: 'Sufficient',
-      contents: [
-        { name: 'Ruby', experience: '1 year' },
-        { name: 'C++', experience: '3 years' },
-        { name: 'C#', experience: '2 years' },
-        { name: 'Haskell', experience: '2 years' },
-        { name: 'Express' },
-        { name: 'Ruby on Rails' },
-        { name: 'Spring boot' },
-      ],
-    },
+    { name: 'JavaScript', level: 'skilled' },
+    { name: 'TypeScript', level: 'skilled' },
+    { name: 'Node.js', level: 'skilled' },
+    { name: 'React.js', level: 'skilled' },
+    { name: 'Next.js', level: 'skilled' },
+    { name: 'Vue.js', level: 'skilled' },
+    { name: 'Tailwind CSS', level: 'skilled' },
+    { name: 'GraphQL', level: 'skilled' },
+    { name: 'Java', level: 'skilled' },
+    { name: 'Kotlin', level: 'skilled' },
+    { name: 'Android', level: 'skilled' },
+    { name: 'Jetpack Compose', level: 'skilled' },
+    { name: 'Kubernetes', level: 'skilled' },
+    { name: 'Go', level: 'skilled' },
+    { name: 'PHP', level: 'skilled' },
+    { name: 'Python', level: 'skilled' },
+    { name: 'Ruby', level: 'sufficient' },
+    { name: 'C++', level: 'sufficient' },
+    { name: 'Haskell', level: 'sufficient' },
   ],
-  qualifications: [
+  certifications: [
     {
-      name: 'Certified Kubernetes Administrator',
-      img: 'https://images.credly.com/size/680x680/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png',
+      title: 'CKA',
+      description: 'Certified Kubernetes Administrator',
       url: 'https://www.credly.com/badges/636db6a0-c6c1-482e-ba22-0e9784fd9538',
     },
-  ],
-  projects: [
     {
-      name: 'confluence-markdown-editor-chrome-extension',
-      platform: 'Vue',
-      tags: ['TypeScript', 'JavaScript', 'Vue'],
-      timeperiod: 'January 2020',
-      description:
-        '🖊️ A Chrome extension provides Markdown editor for Atlassian Confluence.',
-      url: 'https://github.com/ibara1454/confluence-markdown-editor-chrome-extension',
+      title: 'CKAD',
+      description: 'Certified Kubernetes Application Developer',
+      url: 'https://www.credly.com/badges/bfb9b379-765b-478c-bee6-e3c73a0506c1',
     },
     {
-      name: 'piano-visualizer',
-      platform: 'Vue',
-      tags: ['TypeScript', 'Vue'],
-      timeperiod: 'August 2020',
-      description:
-        '🎹 A visualization tool for displaying what you are playing on your MIDI keyboard device.',
-      url: 'https://github.com/ibara1454/piano-visualizer',
+      title: 'JSNAD',
+      description: 'OpenJS Node.js Application Developer',
+      url: 'https://www.credly.com/badges/d3321e53-22b3-4841-94cb-a7fa78c7b075',
     },
     {
-      name: 'secure-shared-preferences',
-      platform: 'Android',
-      tags: ['Kotlin', 'Android'],
-      timeperiod: 'May 2020',
-      description:
-        '🔑 A encrypted SharedPreferences implementation for Android.',
-      url: 'https://github.com/ibara1454/secure-shared-preferences',
-    },
-  ],
-  hobbies: [
-    {
-      name: 'Video Games',
-      iconClass: 'fa fa-gamepad',
-      url: 'https://example.com',
-    },
-    {
-      name: 'Drawing',
-      iconClass: 'fa fa-pencil',
-      url: 'https://example.com',
-    },
-  ],
-  contributions: [
-    {
-      name: 'best-resume-ever',
-      description: '👔 💼 Build fast 🚀 and easy multiple beautiful resumes.',
-      url: 'https://github.com/salomonelli/best-resume-ever',
+      title: 'JSNSD',
+      description: 'OpenJS Node.js Services Developer',
+      url: 'https://www.credly.com/badges/9545d96a-60ca-436c-a586-0e14b4b31b64',
     },
   ],
 };
-
-export default data as PersonalData;

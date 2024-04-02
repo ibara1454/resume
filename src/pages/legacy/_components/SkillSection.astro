@@ -2,13 +2,7 @@
 import Section from './Section.astro';
 
 interface Props {
-  skills: {
-    description: string;
-    contents: {
-      name: string;
-      experience?: string;
-    }[];
-  }[];
+  skills: string[];
   class?: string;
 }
 
@@ -19,21 +13,15 @@ const { skills, class: className, ...rest } = Astro.props;
   <Fragment slot="title">Skills</Fragment>
   <Fragment slot="default">
     <section class="content">
-      {
-        skills.map(({ description, contents }) => (
-          <article>
-            <h2 class="description">{description}</h2>
-            <ul>
-              {contents.map(({ name, experience }) => (
-                <li>
-                  {experience && <span class="experience">({experience})</span>}
-                  {name}
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))
-      }
+      <ul>
+        {
+          skills.map((skill) => (
+            <article>
+              <li>{skill}</li>
+            </article>
+          ))
+        }
+      </ul>
     </section>
   </Fragment>
 </Section>
