@@ -1,0 +1,48 @@
+---
+import clsx from 'clsx';
+
+type TextSize = 'sm' | 'md' | 'lg';
+
+type TextWrap = 'wrap' | 'nowrap' | 'balance';
+
+interface Props {
+  text: string;
+  size?: TextSize;
+  accent?: boolean;
+  wrap?: TextWrap;
+  class?: string;
+}
+
+const {
+  class: className,
+  text,
+  size = 'md',
+  accent = false,
+  wrap = 'wrap',
+  ...rest
+} = Astro.props;
+---
+
+<p
+  class={clsx([
+    className,
+    'font-mono font-normal leading-normal ',
+    {
+      'text-xs': size === 'sm',
+      'text-sm': size === 'md',
+      'text-base': size === 'lg',
+    },
+    {
+      'text-wrap': wrap === 'wrap',
+      'text-nowrap': wrap === 'nowrap',
+      'text-balance': wrap === 'balance',
+    },
+    {
+      'text-black': accent,
+      'text-gray-500': !accent,
+    },
+  ])}
+  {...rest}
+>
+  {text}
+</p>
