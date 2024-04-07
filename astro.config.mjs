@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel/serverless';
 
 // Using Vite on Windows Subsystem for Linux (WSL) 2
 // https://vitejs.dev/config/server-options.html#server-watch
 // Note that usePolling leads to high CPU utilization.
 import react from '@astrojs/react';
-
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
@@ -23,4 +23,6 @@ export default defineConfig({
     enabled: false,
   },
   integrations: [react(), tailwind()],
+  output: 'server',
+  adapter: vercel(),
 });
