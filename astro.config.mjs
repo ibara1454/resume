@@ -24,5 +24,10 @@ export default defineConfig({
   },
   integrations: [react(), tailwind()],
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    // Image service doesn't work by default, so if we didn't enable it,
+    // the requests sent by `<Image />` will result in 404 errors.
+    // https://stackoverflow.com/a/77738867
+    imageService: true,
+  }),
 });
