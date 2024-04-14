@@ -29,5 +29,6 @@ export default defineConfig({
     // the requests sent by `<Image />` will result in 404 errors.
     // https://stackoverflow.com/a/77738867
     imageService: true,
+    webAnalytics: { enabled: true },
   }),
 });
