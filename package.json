@@ -10,8 +10,9 @@
     "astro": "astro",
     "test": "playwright test",
     "test:update": "playwright test --update-snapshots",
-    "prepare": "husky && husky install",
-    "lint": "eslint ."
+    "prepare": "husky",
+    "lint": "eslint .",
+    "prettier": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
@@ -36,18 +37,19 @@
   "devDependencies": {
     "@playwright/test": "^1.41.0",
     "@types/node": "^20.11.4",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.56.0",
-    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-astro": "^0.34.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "husky": "^9.0.10",
-    "lint-staged": "^15.2.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "3.2.4",
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.69.7"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",
-    "*.{js,css,md}": "prettier --write"
+    "*.astro": ["eslint --fix", "astro check"]
   }
 }
