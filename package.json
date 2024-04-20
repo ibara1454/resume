@@ -11,7 +11,8 @@
     "test": "playwright test",
     "test:update": "playwright test --update-snapshots",
     "prepare": "husky && husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prettier": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
