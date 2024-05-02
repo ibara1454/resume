@@ -1,4 +1,5 @@
 ---
+import Text from './Text.astro';
 interface Props {
   items: string[];
   class?: string;
@@ -10,8 +11,8 @@ const { items, class: className, ...rest } = Astro.props;
 <ul class:list={[className, 'list-disc list-inside']} {...rest}>
   {
     items.map((item) => (
-      <li class="font-mono font-normal leading-normal text-sm text-wrap text-gray-500">
-        {item}
+      <li class="text-sm text-gray-500">
+        <Text inline text={item} />
       </li>
     ))
   }
