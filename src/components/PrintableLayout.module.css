@@ -1,20 +1,37 @@
 .printableLayout {
-  width: 210mm;
-  min-height: 297mm;
-  padding: 2rem 3rem;
-  box-shadow:
-    5px 8px 9px 0px rgba(0, 0, 0, 0.4),
-    5px 8px 30px 0px rgba(0, 0, 0, 0.2);
+  width: 210mm; /* A4 width: 210mm */
+  padding: 0.4in;
+  margin: 0 auto;
+
+  &.shadow {
+    box-shadow:
+      5px 8px 9px 0px rgba(0, 0, 0, 0.4),
+      5px 8px 30px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.page {
+  width: calc(210mm - 2 * 0.4in); /* A4 width: 210mm */
 }
 
 @media print {
-  .printableLayout {
-    print-color-adjust: exact;
-    box-shadow: none;
-  }
   @page {
     size: A4 portrait;
-    margin: 2rem 0;
-    /* padding: 2rem 3rem; */
+    margin: 0.4in;
+  }
+
+  .printableLayout {
+    width: unset;
+    padding: unset;
+    margin: unset;
+    print-color-adjust: exact;
+
+    &.shadow {
+      box-shadow: unset;
+    }
+  }
+
+  .page {
+    width: unset;
   }
 }

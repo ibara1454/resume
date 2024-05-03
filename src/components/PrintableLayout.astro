@@ -2,12 +2,18 @@
 import style from './PrintableLayout.module.css';
 
 interface Props {
+  shadow?: boolean;
   class?: string;
 }
 
-const { class: className, ...rest } = Astro.props;
+const { class: className, shadow = false, ...rest } = Astro.props;
 ---
 
-<div class:list={[className, style.printableLayout]} {...rest}>
-  <slot />
+<div
+  class:list={[className, style.printableLayout, shadow && style.shadow]}
+  {...rest}
+>
+  <div class={style.page}>
+    <slot />
+  </div>
 </div>
