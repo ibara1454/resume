@@ -22,7 +22,14 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  integrations: [react(), tailwind()],
+  integrations: [
+    react(),
+    tailwind({
+      // https://docs.astro.build/ja/guides/integrations-guide/tailwind/#nesting
+      // Allow writing nested CSS declarations alongside Tailwind's syntax
+      nesting: true,
+    }),
+  ],
   output: 'server',
   adapter: vercel({
     // Image service doesn't work by default, so if we didn't enable it,
