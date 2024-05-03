@@ -28,7 +28,7 @@ const Element = inline ? 'span' : 'p';
 ---
 
 <Element
-  class={clsx([
+  class={clsx(
     className,
     'font-sans font-normal leading-relaxed tracking-wider',
     {
@@ -45,7 +45,7 @@ const Element = inline ? 'span' : 'p';
       'text-black': accent,
       'text-gray-500': !accent,
     },
-  ])}
+  )}
   {...rest}
 >
   {text}
