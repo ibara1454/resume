@@ -9,6 +9,7 @@ interface Props {
   text: string;
   size?: TextSize;
   accent?: boolean;
+  inline?: boolean;
   wrap?: TextWrap;
   class?: string;
 }
@@ -18,15 +19,18 @@ const {
   text,
   size = 'md',
   accent = false,
+  inline = false,
   wrap = 'wrap',
   ...rest
 } = Astro.props;
+
+const Element = inline ? 'span' : 'p';
 ---
 
-<p
-  class={clsx([
+<Element
+  class={clsx(
     className,
-    'font-mono font-normal leading-normal ',
+    'font-sans font-normal leading-relaxed tracking-wider',
     {
       'text-xs': size === 'sm',
       'text-sm': size === 'md',
@@ -41,8 +45,8 @@ const {
       'text-black': accent,
       'text-gray-500': !accent,
     },
-  ])}
+  )}
   {...rest}
 >
   {text}
-</p>
+</Element>
