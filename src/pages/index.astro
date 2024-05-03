@@ -29,9 +29,9 @@ const { summary, contact, experience, education, skills, certifications } =
         githubId={contact.githubId}
         linkedInId={contact.linkedInId}
       />
+      <SkillsSection skills={skills.map((item) => item.name)} />
       <WorkExperienceSection experience={experience} />
       <EducationSection education={education} />
-      <SkillsSection skills={skills.map((item) => item.name)} />
       <CertificationsSection certifications={certifications} />
     </VStack>
   </PrintableLayout>
