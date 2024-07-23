@@ -66,7 +66,7 @@ export const profile: Profile = {
       last: 'Wang',
     },
     jobTitle: 'Full Stack Engineer',
-    languages: ['English:business', 'Japanese:fluent', 'Chinese:native'],
+    languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
     about:
       'Experienced Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
   },
