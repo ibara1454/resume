@@ -45,7 +45,10 @@ const { class: className, text, level, ...rest } = Astro.props;
 {
   level === 'subitem' && (
     <h4
-      class={clsx([className, 'text-sm font-normal leading-relaxed font-mono'])}
+      class={clsx([
+        className,
+        'text-sm font-semibold underline leading-relaxed',
+      ])}
       {...rest}
     >
       {text}

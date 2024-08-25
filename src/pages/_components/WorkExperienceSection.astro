@@ -3,30 +3,56 @@ import Section from '@components/Section.astro';
 import EducationWorkExperienceItem from './EducationWorkExperienceItem.astro';
 import Title from './Title.astro';
 import VStack from './VStack.astro';
-import type { Experience } from '@data/profile';
+import {
+  isMultiPositionExperience,
+  isSinglePositionExperience,
+  type Experience,
+} from '@data/profile';
+import HStack from './HStack.astro';
+import Badge from './Badge.astro';
+import List from './List.astro';
 
 interface Props {
-  experience: Experience[];
+  experiences: Experience[];
   class?: string;
 }
 
-const { experience, class: className, ...rest } = Astro.props;
+const { experiences, class: className, ...rest } = Astro.props;
 ---
 
 <Section class={className} {...rest}>
   <Title level="section" text="Work Experience" />
   <VStack gap="2">
     {
-      experience.map((item) => (
+      experiences.map((experience) => (
         <EducationWorkExperienceItem
-          title={item.company}
-          attributes={item.techStack}
-          subTitle={item.jobTitle}
-          startPeriod={item.startDate}
-          endPeriod={item.endDate}
-          activities={item.activities}
-          url={item.website}
-        />
+          title={experience.company}
+          subTitle={experience.jobTitle}
+          startPeriod={experience.startDate}
+          endPeriod={experience.endDate}
+          url={experience.website}
+        >
+          <HStack gap="1" wrap class="my-2">
+            {experience.techStack.map((item) => (
+              <Badge text={item} />
+            ))}
+          </HStack>
+
+          {isSinglePositionExperience(experience) && (
+            <List items={experience.activities} />
+          )}
+
+          {isMultiPositionExperience(experience) && (
+            <VStack gap="1">
+              {experience.positions.map((position) => (
+                <VStack>
+                  <Title level="subitem" text={position.jobTitle} />
+                  <List items={position.activities} />
+                </VStack>
+              ))}
+            </VStack>
+          )}
+        </EducationWorkExperienceItem>
       ))
     }
   </VStack>
