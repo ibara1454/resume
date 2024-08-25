@@ -3,29 +3,23 @@ import clsx from 'clsx';
 import Text from './Text.astro';
 import Title from './Title.astro';
 import HStack from './HStack.astro';
-import Badge from './Badge.astro';
-import List from './List.astro';
 
 interface Props {
   title: string;
-  attributes?: string[];
   subTitle?: string;
   startPeriod: string;
   endPeriod: string;
   url: string;
-  activities: string[] | string;
   class?: string;
 }
 
 const {
   class: className,
   title,
-  attributes = [],
   subTitle,
   startPeriod,
   endPeriod,
   url,
-  activities,
   ...rest
 } = Astro.props;
 ---
@@ -48,24 +42,7 @@ const {
     <Text size="lg" text={`${startPeriod} - ${endPeriod}`} />
   </HStack>
 
-  {subTitle && <Title level="subitem" text={subTitle} />}
+  {subTitle && <Text accent text={subTitle} />}
 
-  {
-    // Display attributes only if there are any
-    attributes.length > 0 && (
-      <HStack gap="1" wrap class="my-2">
-        {attributes.map((item) => (
-          <Badge text={item} />
-        ))}
-      </HStack>
-    )
-  }
-
-  {
-    typeof activities === 'string' ? (
-      <Text text={activities} />
-    ) : (
-      <List items={activities} />
-    )
-  }
+  <slot />
 </article>

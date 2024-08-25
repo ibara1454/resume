@@ -30,7 +30,7 @@ const Element = inline ? 'span' : 'p';
 <Element
   class={clsx(
     className,
-    'font-sans font-normal leading-relaxed tracking-wider',
+    'font-normal leading-relaxed',
     {
       'text-xs': size === 'sm',
       'text-sm': size === 'md',
@@ -44,6 +44,10 @@ const Element = inline ? 'span' : 'p';
     {
       'text-black': accent,
       'text-gray-500': !accent,
+    },
+    {
+      'font-sans tracking-wider': !accent,
+      'font-mono': accent,
     },
   )}
   {...rest}

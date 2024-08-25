@@ -1,6 +1,7 @@
 ---
 import Section from '@components/Section.astro';
 import Title from './Title.astro';
+import Text from './Text.astro';
 import EducationWorkExperienceItem from './EducationWorkExperienceItem.astro';
 import VStack from './VStack.astro';
 import type { Education } from '@data/profile';
@@ -22,9 +23,10 @@ const { education, class: className, ...rest } = Astro.props;
           title={item.name}
           startPeriod={item.startDate}
           endPeriod={item.endDate}
-          activities={item.degree}
           url={item.website}
-        />
+        >
+          <Text text={item.degree} />
+        </EducationWorkExperienceItem>
       ))
     }
   </VStack>

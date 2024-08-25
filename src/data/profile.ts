@@ -29,7 +29,9 @@ export interface Contact {
   websiteUrl?: string;
 }
 
-export interface Experience {
+export type Experience = SinglePositionExperience | MultiPositionExperience;
+
+export interface SinglePositionExperience {
   jobTitle: string;
   company: string;
   startDate: string;
@@ -37,6 +39,33 @@ export interface Experience {
   techStack: string[];
   activities: string[];
   website: string;
+}
+
+export function isSinglePositionExperience(
+  experience: Experience,
+): experience is SinglePositionExperience {
+  return (experience as SinglePositionExperience).activities !== undefined;
+}
+
+export interface MultiPositionExperience {
+  jobTitle: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  techStack: string[];
+  positions: Position[];
+  website: string;
+}
+
+export function isMultiPositionExperience(
+  experience: Experience,
+): experience is MultiPositionExperience {
+  return (experience as MultiPositionExperience).positions !== undefined;
+}
+
+export interface Position {
+  jobTitle: string;
+  activities: string[];
 }
 
 export interface Education {
@@ -56,7 +85,6 @@ export interface Certification {
   title: string;
   description: string;
   url: string;
-  imageUrl?: string;
 }
 
 export const profile: Profile = {
@@ -68,7 +96,7 @@ export const profile: Profile = {
     jobTitle: 'Full Stack Engineer',
     languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
     about:
-      'Experienced Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
   },
   contact: {
     city: 'Tokyo',
@@ -84,16 +112,31 @@ export const profile: Profile = {
       company: 'Mercari Inc.',
       startDate: '2021.11',
       endDate: 'Present',
-      activities: [
-        '(CS Tool) Worked as a frontend/backend engineer on a multi-platform team which had around 10 members.',
-        '(CS Tool) Migrated the "Mercari CS Tool" from the legacy backend codebase using GraphQL.',
-        '(CS Tool) Led the team to improve development process efficiency significantly using Skaffold. As a result, the launch time of the devserver was reduced from 15~30 minutes to 1 minute.',
-        '(Android) Worked as an Android engineer on a multi-platform team which had around 8 members. (2~3 Android engineers)',
-        '(Android) Helped and guided junior Android engineers, helping them develop their skills and knowledge.',
-        '(Android) Collaborated effectively with designers and product owners to enhance user experience for new projects.',
-        '(Web) Worked as a frontend engineer on a frontend team which has around 8 members.',
-        '(Web) Played a key role in the success of cross-team projects by leveraging deep understanding of each team to effectively coordinate efforts and deliver results.',
-        "(Social&Share Web) Played a key role as a frontend developer on 'My Collection' project. Helped to design and review the backend APIs and led multiple technical decisions.",
+      positions: [
+        {
+          jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
+          activities: [
+            'Worked as a frontend/backend engineer on a multi-platform team which had around 10 members, developing the "Mercari CS Tool" using technologies such as React, PHP, Go, GraphQL, and Kubernetes.',
+            'Contributed on the "CS Tool backend migration" project, consolidating the legacy backend codebase to an unified GraphQL service.',
+            'Led the team to improve development efficiency significantly using Skaffold. As a result, the reflection time of changes was reduced from 15~30 minutes to 1 just minute.',
+          ],
+        },
+        {
+          jobTitle: 'Android Engineer - Mercari Marketplace',
+          activities: [
+            'Served as a key Android engineer in an 8-member (2~3 Android engineers) multi-platform team, developing the "Mercari" Android application using Kotlin and Jetpack Compose.',
+            'Mentored junior Android engineers, fostering their skills and knowledge to enhance team capabilities.',
+            'Collaborated closely with designers and product owners, proposing and implementing numerous user experience improvements for new projects.',
+          ],
+        },
+        {
+          jobTitle: 'Frontend Engineer - Mercari Marketplace',
+          activities: [
+            'Contributed as a frontend engineer in an 8-member frontend team, developing the "Mercari" marketplace website using technologies such as TypeScript, React, Jotai, and Next.js.',
+            'Contributed to the success of cross-team projects by leveraging comprehensive understanding of each team to effectively coordinate efforts and deliver results.',
+            'Played a pivotal role as frontend developer for the "My Collection" project. assisting in designing and reviewing the backend APIs and led multiple technical decisions.',
+          ],
+        },
       ],
       website: 'https://about.mercari.com/',
       techStack: [
@@ -116,16 +159,25 @@ export const profile: Profile = {
       company: 'Yahoo Japan Corporation',
       startDate: '2018.04',
       endDate: '2021.10',
-      activities: [
-        '(Yahoo! Mail Android) Worked as an Android engineer with around 10 members.',
-        '(Yahoo! Mail Android) Implemented features such as OpenID Connect authorization and IMAP client.',
-        '(Yahoo! Mail Android) Improved test automation/linter. Set up CI/CD configuration/build variants.',
-        '(Yahoo! Mail Android) Organized workshops regularly to help the team members improve their skills.',
-        '(Yahoo! Mail Web) Worked as a frontend engineer/tech leader with around 10 members and led the team in technical decisions.',
-        '(Yahoo! Mail Web) Worked on migrating the old "Yahoo! Mail" service using React.',
-        '(Yahoo! Mail Web) In charge of the most complicated/difficult tasks in the project.',
-        '(Yahoo! Mail Web) Designed the backend architecture for "Yahoo! Mail Web React Renewal" project using Kubernetes.',
-        '(Yahoo! Mail Web) Led the decision to improve the Core Web Vitals score by applying performance optimizations, resulting in a 100%+ improvement in score.',
+      positions: [
+        {
+          jobTitle: 'Android Engineer - Yahoo! Mail Android',
+          activities: [
+            'Worked as an Android engineer in a team of 10, developing the "Yahoo! Mail" Android application using technologies such as RxJava, MVVM architecture, and Clean architecture.',
+            'Implemented core features including the OpenID Connect authorization method and IMAP client.',
+            'Utilized critical knowledge to enhance test automation, improve linting processes, and set up CI/CD configurations and multiple build variants.',
+            'Beyond product development, regularly organized workshops to foster skill improvement among team members.',
+          ],
+        },
+        {
+          jobTitle: 'Frontend Engineer - Yahoo! Mail Web',
+          activities: [
+            'Served as a frontend engineer/tech lead in "Yahoo! Mail Web" team, employing technologies such as React, Redux, and Kubernetes in the "Yahoo! Mail Web React Renewal" project.',
+            'Took charge of highly specialized and complex tasks, including performance optimization and authorization implementation.',
+            "Led an effort to improve the website's performance with respect to Core Web Vitals, achieving an exceptional 100%+ improvement in score.",
+            'Designed the backend architecture from scratch for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
+          ],
+        },
       ],
       website: 'https://about.yahoo.co.jp/',
       techStack: [
