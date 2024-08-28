@@ -116,8 +116,8 @@ export const profile: Profile = {
         {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
           activities: [
-            'Worked as a frontend/backend engineer on a multi-platform team which had around 10 members, developing the "Mercari CS Tool" using technologies such as React, PHP, Go, GraphQL, and Kubernetes.',
-            'Contributed on the "CS Tool backend migration" project, consolidating the legacy backend codebase to an unified GraphQL service.',
+            'Worked as a frontend/backend engineer on a multi-platform team which had around 10 members, developing the "Mercari CS Tool" using technologies such as GCP, React, PHP, Go, GraphQL, and Kubernetes.',
+            'Contributed on the "CS Tool backend migration" project, consolidating the legacy backend SQL to an unified GraphQL service.',
             'Led the team to improve development efficiency significantly using Skaffold. As a result, the reflection time of changes was reduced from 15~30 minutes to 1 just minute.',
           ],
         },
@@ -134,16 +134,18 @@ export const profile: Profile = {
           activities: [
             'Contributed as a frontend engineer in an 8-member frontend team, developing the "Mercari" marketplace website using technologies such as TypeScript, React, Jotai, and Next.js.',
             'Contributed to the success of cross-team projects by leveraging comprehensive understanding of each team to effectively coordinate efforts and deliver results.',
-            'Played a pivotal role as frontend developer for the "My Collection" project. assisting in designing and reviewing the backend APIs and led multiple technical decisions.',
+            'Played a pivotal role as frontend developer for the "My Collection" project, assisting in designing and reviewing the backend APIs and led multiple technical decisions.',
           ],
         },
       ],
       website: 'https://about.mercari.com/',
       techStack: [
+        'GCP',
         'PHP',
         'Go',
         'GraphQL',
         'Kubernetes',
+        'SQL',
         'JavaScript',
         'TypeScript',
         'React',
@@ -174,8 +176,9 @@ export const profile: Profile = {
           activities: [
             'Served as a frontend engineer/tech lead in "Yahoo! Mail Web" team, employing technologies such as React, Redux, and Kubernetes in the "Yahoo! Mail Web React Renewal" project.',
             'Took charge of highly specialized and complex tasks, including performance optimization and authorization implementation.',
+            'Developed a custom WYSIWYG rich text editor for Yahoo! Mail Web using Quill.js.',
             "Led an effort to improve the website's performance with respect to Core Web Vitals, achieving an exceptional 100%+ improvement in score.",
-            'Designed the backend architecture from scratch for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
+            'Architected the backend infrastructure from the ground up for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
           ],
         },
       ],
@@ -221,6 +224,7 @@ export const profile: Profile = {
     { name: 'Kotlin', level: 'skilled' },
     { name: 'Android', level: 'skilled' },
     { name: 'Jetpack Compose', level: 'skilled' },
+    { name: 'GCP', level: 'skilled' },
     { name: 'Kubernetes', level: 'skilled' },
     { name: 'Go', level: 'skilled' },
     { name: 'PHP', level: 'skilled' },
@@ -228,6 +232,7 @@ export const profile: Profile = {
     { name: 'Ruby', level: 'sufficient' },
     { name: 'C++', level: 'sufficient' },
     { name: 'Haskell', level: 'sufficient' },
+    { name: 'SQL', level: 'sufficient' },
   ],
   certifications: [
     {
