@@ -25,7 +25,7 @@ const { class: className, text, level, ...rest } = Astro.props;
 {
   level === 'section' && (
     <h2
-      class={clsx([className, 'text-xl font-bold leading-relaxed mb-3'])}
+      class={clsx([className, 'text-xl font-bold leading-relaxed mb-1'])}
       {...rest}
     >
       {text}

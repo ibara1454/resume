@@ -22,7 +22,7 @@ const { experiences, class: className, ...rest } = Astro.props;
 
 <Section class={className} {...rest}>
   <Title level="section" text="Work Experience" />
-  <VStack gap="2">
+  <VStack gap="1">
     {
       experiences.map((experience) => (
         <EducationWorkExperienceItem
