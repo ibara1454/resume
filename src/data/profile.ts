@@ -96,7 +96,7 @@ export const profile: Profile = {
     jobTitle: 'Full Stack Engineer',
     languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience.',
   },
   contact: {
     city: 'Tokyo',
@@ -123,7 +123,7 @@ export const profile: Profile = {
         'Working as a frontend focused full stack engineer in a 20-member team, developing an access control system.',
         'Implemented practical project management methodologies to track team progress and maintain focus on OKRs.',
         'Led the creation of team OKRs and guided the team through technical challenges to achieve objectives.',
-        'Identified and resolved inefficiencies by consolidating frontend services from 6 to 2, reducing deployment preparation time by approximately 50%.',
+        'Identified and led the team to resolve inefficiencies by consolidating frontend services from 6 to 2, reducing deployment preparation time by approximately 50%.',
         'Established frontend development guidelines and best practices while mentoring frontend engineers to enhance team capabilities.',
       ],
       website: 'https://woven.toyota/en/',
@@ -190,15 +190,12 @@ export const profile: Profile = {
             'Worked as an Android engineer in a team of 10, developing the "Yahoo! Mail" Android application using technologies such as RxJava, MVVM architecture, and Clean architecture.',
             'Implemented core features including the OpenID Connect authorization method and IMAP client.',
             'Utilized critical knowledge to enhance test automation, improve linting processes, and set up CI/CD configurations and multiple build variants.',
-            'Beyond product development, regularly organized workshops to foster skill improvement among team members.',
           ],
         },
         {
           jobTitle: 'Frontend Engineer - Yahoo! Mail Web',
           activities: [
             'Served as a frontend engineer/tech lead in "Yahoo! Mail Web" team, employing technologies such as React, Redux, and Kubernetes in the "Yahoo! Mail Web React Renewal" project.',
-            'Took charge of highly specialized and complex tasks, including performance optimization and authorization implementation.',
-            'Developed a custom WYSIWYG rich text editor for Yahoo! Mail Web using Quill.js.',
             "Led an effort to improve the website's performance with respect to Core Web Vitals, achieving an exceptional 100%+ improvement in score.",
             'Architected the backend infrastructure from the ground up for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
           ],
