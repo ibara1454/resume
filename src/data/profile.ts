@@ -96,7 +96,7 @@ export const profile: Profile = {
     jobTitle: 'Full Stack Engineer',
     languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
   },
   contact: {
     city: 'Tokyo',
@@ -107,11 +107,33 @@ export const profile: Profile = {
   },
   experience: [
     {
+      jobTitle: 'Full Stack Engineer',
+      company: 'Woven by Toyota, Inc.',
+      startDate: '2024.12',
+      endDate: 'Present',
+      techStack: [
+        'JavaScript',
+        'TypeScript',
+        'Node.js',
+        'React',
+        'AWS',
+        'Kubernetes',
+      ],
+      activities: [
+        'Working as a frontend focused full stack engineer in a 20-member team, developing an access control system.',
+        'Implemented practical project management methodologies to track team progress and maintain focus on OKRs.',
+        'Led the creation of team OKRs and guided the team through technical challenges to achieve objectives.',
+        'Identified and resolved inefficiencies by consolidating frontend services from 6 to 2, reducing deployment preparation time by approximately 50%.',
+        'Established frontend development guidelines and best practices while mentoring frontend engineers to enhance team capabilities.',
+      ],
+      website: 'https://woven.toyota/en/',
+    },
+    {
       jobTitle:
         'Backend/Frontend Engineer → Android Engineer → Frontend Engineer',
-      company: 'Mercari Inc.',
+      company: 'Mercari, Inc.',
       startDate: '2021.11',
-      endDate: 'Present',
+      endDate: '2024.11',
       positions: [
         {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
@@ -225,6 +247,7 @@ export const profile: Profile = {
     { name: 'Android', level: 'skilled' },
     { name: 'Jetpack Compose', level: 'skilled' },
     { name: 'GCP', level: 'skilled' },
+    { name: 'AWS', level: 'skilled' },
     { name: 'Kubernetes', level: 'skilled' },
     { name: 'Go', level: 'skilled' },
     { name: 'PHP', level: 'skilled' },
