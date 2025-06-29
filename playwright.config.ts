@@ -30,6 +30,15 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  expect: {
+    // Allow a small difference in pixel ratio for visual comparisons
+    // Because the captured screenshots may vary slightly due to the environment,
+    // such as different screen resolutions or rendering engines.
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.02, // Allow a small difference in pixel ratio for snapshots
+    },
+  },
+
   /* Configure projects for major browsers */
   projects: [
     {
