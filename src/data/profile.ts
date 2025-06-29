@@ -123,6 +123,7 @@ export const profile: Profile = {
         'Working as a frontend focused full stack engineer in a 20-member team, developing an access control system.',
         'Implemented practical project management methodologies to track team progress and maintain focus on OKRs.',
         'Led the creation of team OKRs and guided the team through technical challenges to achieve objectives.',
+        'Set up and deployed LLM models to AWS using SGLang to help the team to improve the development efficiency.',
         'Identified and led the team to resolve inefficiencies by consolidating frontend services from 6 to 2, reducing deployment preparation time by approximately 50%.',
         'Established frontend development guidelines and best practices while mentoring frontend engineers to enhance team capabilities.',
       ],
