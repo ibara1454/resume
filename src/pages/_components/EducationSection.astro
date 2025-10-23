@@ -16,7 +16,7 @@ const { education, class: className, ...rest } = Astro.props;
 
 <Section class={className} noBreak {...rest}>
   <Title level="section" text="Education" />
-  <VStack gap="2">
+  <VStack gap="1">
     {
       education.map((item) => (
         <EducationWorkExperienceItem

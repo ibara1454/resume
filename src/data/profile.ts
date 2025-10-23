@@ -96,7 +96,7 @@ export const profile: Profile = {
     jobTitle: 'Full Stack Engineer',
     languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 6 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience. Dedicated to continuous learning and sharing knowledge.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience.',
   },
   contact: {
     city: 'Tokyo',
@@ -107,11 +107,33 @@ export const profile: Profile = {
   },
   experience: [
     {
+      jobTitle: 'Full Stack Engineer',
+      company: 'Woven by Toyota, Inc.',
+      startDate: '2024.12',
+      endDate: 'Present',
+      techStack: [
+        'JavaScript',
+        'TypeScript',
+        'Node.js',
+        'React',
+        'AWS',
+        'Kubernetes',
+        'Android',
+      ],
+      activities: [
+        'Working as a frontend focused full stack engineer in a 20-member team. Engineered and launched a comprehensive access control system and visitor registration web application, tech stack including TypeScript, React, Node.js, AWS, and Kubernetes.',
+        "Guided the team's direction by partnering with the product owner to refine product vision and translate it into actionable OKRs and project requirements.",
+        'Architected and implemented a full-cycle release strategy from the ground up, incorporating CI/CD pipelines and automated testing which resulted in a significant reduction in deployment-related issues.',
+        'Authored and enforced frontend development guidelines and best practices, and mentored a team of frontend engineers, leading to improvement in code quality and team velocity.',
+      ],
+      website: 'https://woven.toyota/en/',
+    },
+    {
       jobTitle:
         'Backend/Frontend Engineer → Android Engineer → Frontend Engineer',
-      company: 'Mercari Inc.',
+      company: 'Mercari, Inc.',
       startDate: '2021.11',
-      endDate: 'Present',
+      endDate: '2024.11',
       positions: [
         {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
@@ -168,15 +190,12 @@ export const profile: Profile = {
             'Worked as an Android engineer in a team of 10, developing the "Yahoo! Mail" Android application using technologies such as RxJava, MVVM architecture, and Clean architecture.',
             'Implemented core features including the OpenID Connect authorization method and IMAP client.',
             'Utilized critical knowledge to enhance test automation, improve linting processes, and set up CI/CD configurations and multiple build variants.',
-            'Beyond product development, regularly organized workshops to foster skill improvement among team members.',
           ],
         },
         {
           jobTitle: 'Frontend Engineer - Yahoo! Mail Web',
           activities: [
             'Served as a frontend engineer/tech lead in "Yahoo! Mail Web" team, employing technologies such as React, Redux, and Kubernetes in the "Yahoo! Mail Web React Renewal" project.',
-            'Took charge of highly specialized and complex tasks, including performance optimization and authorization implementation.',
-            'Developed a custom WYSIWYG rich text editor for Yahoo! Mail Web using Quill.js.',
             "Led an effort to improve the website's performance with respect to Core Web Vitals, achieving an exceptional 100%+ improvement in score.",
             'Architected the backend infrastructure from the ground up for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
           ],
@@ -225,6 +244,7 @@ export const profile: Profile = {
     { name: 'Android', level: 'skilled' },
     { name: 'Jetpack Compose', level: 'skilled' },
     { name: 'GCP', level: 'skilled' },
+    { name: 'AWS', level: 'skilled' },
     { name: 'Kubernetes', level: 'skilled' },
     { name: 'Go', level: 'skilled' },
     { name: 'PHP', level: 'skilled' },
