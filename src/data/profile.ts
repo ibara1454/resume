@@ -94,9 +94,13 @@ export const profile: Profile = {
       last: 'Wang',
     },
     jobTitle: 'Full Stack Engineer',
-    languages: ['English:business', 'Japanese:proficient', 'Chinese:native'],
+    languages: [
+      'English:B2(business)',
+      'Japanese:C2(proficient)',
+      'Chinese:native',
+    ],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7 years of practical experience. Proficient in popular architectures and frameworks. Skilled at writing clean code and improving the overall development experience.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7+ years of practical experience. Has solid application development skills and proficient in architectures and popular frameworks. Skilled at writing clean code and improving the overall development experience.',
   },
   contact: {
     city: 'Tokyo',
@@ -122,7 +126,7 @@ export const profile: Profile = {
       ],
       activities: [
         'Working as a frontend focused full stack engineer in a 20-member team. Engineered and launched a comprehensive access control system and visitor registration web application, tech stack including TypeScript, React, Node.js, AWS, and Kubernetes.',
-        "Guided the team's direction by partnering with the product owner to refine product vision and translate it into actionable OKRs and project requirements.",
+        "Playing a key role in leading the team's direction by partnering with the product owner to refine product vision and translate it into actionable OKRs and project requirements.",
         'Architected and implemented a full-cycle release strategy from the ground up, incorporating CI/CD pipelines and automated testing which resulted in a significant reduction in deployment-related issues.',
         'Authored and enforced frontend development guidelines and best practices, and mentored a team of frontend engineers, leading to improvement in code quality and team velocity.',
       ],
