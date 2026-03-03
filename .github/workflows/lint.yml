@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          # commitlint needs the full history to walk the commit range on PRs;
+          # the default shallow clone (depth 1) would cause it to miss commits.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v3
         with:
@@ -26,3 +30,6 @@ jobs:
 
       - name: Run prettier
         run: npm run prettier
+
+      - name: Lint commit messages
+        uses: wagoid/commitlint-github-action@v6

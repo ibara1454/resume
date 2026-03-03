@@ -12,7 +12,8 @@
     "test:update": "playwright test --update-snapshots",
     "prepare": "husky",
     "lint": "eslint .",
-    "prettier": "prettier --check ."
+    "prettier": "prettier --check .",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
@@ -35,6 +36,8 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
     "@playwright/test": "^1.53.0",
     "@types/node": "^20.11.4",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
