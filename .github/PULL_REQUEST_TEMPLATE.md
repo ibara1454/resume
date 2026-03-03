@@ -15,3 +15,4 @@
 - [ ] Refactor (no functional change)
 - [ ] Build / CI configuration
 - [ ] Dependencies update
+- [ ] Documentation
