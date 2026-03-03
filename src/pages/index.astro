@@ -11,9 +11,13 @@ import Layout from '@layouts/Layout.astro';
 
 const { summary, contact, experience, education, skills, certifications } =
   profile;
+
+const fullName = [summary.name.first, summary.name.middle, summary.name.last]
+  .filter(Boolean)
+  .join(' ');
 ---
 
-<Layout title="Resume">
+<Layout title={`${fullName} - ${summary.jobTitle}`} description={summary.about}>
   <PrintableLayout>
     <VStack gap="2" horizontalAlign="stretch">
       <ProfileSection
