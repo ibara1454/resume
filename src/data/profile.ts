@@ -100,7 +100,7 @@ export const profile: Profile = {
       'Chinese:native',
     ],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development. With 7+ years of practical experience. Has solid application development skills and proficient in architectures and popular frameworks. Skilled at writing clean code and improving the overall development experience.',
+      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development and 7+ years of practical experience. Demonstrates solid application development skills and proficiency in modern architectures and popular frameworks. Skilled at writing clean code and improving the overall development experience.',
   },
   contact: {
     city: 'Tokyo',
@@ -128,7 +128,7 @@ export const profile: Profile = {
         'Working as a frontend focused full stack engineer in a 20-member team. Engineered and launched a comprehensive access control system and visitor registration web application, tech stack including TypeScript, React, Node.js, AWS, and Kubernetes.',
         "Playing a key role in leading the team's direction by partnering with the product owner to refine product vision and translate it into actionable OKRs and project requirements.",
         'Architected and implemented a full-cycle release strategy from the ground up, incorporating CI/CD pipelines and automated testing which resulted in a significant reduction in deployment-related issues.',
-        'Authored and enforced frontend development guidelines and best practices, and mentored a team of frontend engineers, leading to improvement in code quality and team velocity.',
+        'Authored and enforced frontend development guidelines and best practices, and mentored a team of frontend engineers, leading to improvements in code quality and team velocity.',
       ],
       website: 'https://woven.toyota/en/',
     },
@@ -143,8 +143,8 @@ export const profile: Profile = {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
           activities: [
             'Worked as a frontend/backend engineer on a multi-platform team which had around 10 members, developing the "Mercari CS Tool" using technologies such as GCP, React, PHP, Go, GraphQL, and Kubernetes.',
-            'Contributed on the "CS Tool backend migration" project, consolidating the legacy backend SQL to an unified GraphQL service.',
-            'Led the team to improve development efficiency significantly using Skaffold. As a result, the reflection time of changes was reduced from 15~30 minutes to 1 just minute.',
+            'Contributed to the "CS Tool backend migration" project, consolidating the legacy backend SQL queries into a unified GraphQL service.',
+            'Led the team to improve development efficiency significantly using Skaffold. As a result, the reflection time of changes was reduced from 15~30 minutes to just 1 minute.',
           ],
         },
         {
@@ -214,7 +214,6 @@ export const profile: Profile = {
         'Kubernetes',
         'TypeScript',
         'React',
-        'Node.js',
       ],
     },
   ],
