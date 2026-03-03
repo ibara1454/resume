@@ -1,0 +1,66 @@
+---
+import PrintableLayout from '@components/PrintableLayout.astro';
+import CertificationsSection from '../_components/CertificationsSection.astro';
+import ProfileSection from '../_components/ProfileSection.astro';
+import EducationSection from '../_components/EducationSection.astro';
+import WorkExperienceSection from '../_components/WorkExperienceSection.astro';
+import SkillsSection from '../_components/SkillsSection.astro';
+import VStack from '../_components/VStack.astro';
+import { getProfile } from '@data/profile';
+import '@data/profile.en';
+import '@data/profile.ja';
+import Layout from '@layouts/Layout.astro';
+import { locales, isLocale, type Locale } from '@i18n/config';
+import { getUI } from '@i18n/ui';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+
+if (!isLocale(lang)) {
+  return Astro.redirect('/en');
+}
+
+const locale = lang as Locale;
+const profile = getProfile(locale);
+const ui = getUI(locale);
+const { summary, contact, experience, education, skills, certifications } =
+  profile;
+---
+
+<Layout title={ui.resume} lang={locale}>
+  <PrintableLayout>
+    <VStack gap="2" horizontalAlign="stretch">
+      <ProfileSection
+        firstName={summary.name.first}
+        middleName={summary.name.middle}
+        lastName={summary.name.last}
+        jobTitle={summary.jobTitle}
+        languages={summary.languages}
+        about={summary.about}
+        city={contact.city}
+        country={contact.country}
+        email={contact.email}
+        githubId={contact.githubId}
+        linkedInId={contact.linkedInId}
+      />
+      <SkillsSection
+        skills={skills.map((item) => item.name)}
+        title={ui.skills}
+      />
+      <WorkExperienceSection
+        experiences={experience}
+        title={ui.workExperience}
+      />
+      <EducationSection education={education} title={ui.education} />
+      <CertificationsSection
+        certifications={certifications}
+        title={ui.certifications}
+      />
+    </VStack>
+  </PrintableLayout>
+</Layout>

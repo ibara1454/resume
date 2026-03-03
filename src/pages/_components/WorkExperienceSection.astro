@@ -14,14 +14,20 @@ import List from './List.astro';
 
 interface Props {
   experiences: Experience[];
+  title?: string;
   class?: string;
 }
 
-const { experiences, class: className, ...rest } = Astro.props;
+const {
+  experiences,
+  title = 'Work Experience',
+  class: className,
+  ...rest
+} = Astro.props;
 ---
 
 <Section class={className} {...rest}>
-  <Title level="section" text="Work Experience" />
+  <Title level="section" text={title} />
   <VStack gap="1">
     {
       experiences.map((experience) => (

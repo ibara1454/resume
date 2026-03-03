@@ -62,7 +62,7 @@ const fullName = [firstName, middleName, lastName].filter(Boolean).join(' ');
       <Text text={about} />
 
       <HStack gap="1" class="my-2">
-        <IconLink href="mailto:ibara1454@gmail.com">
+        <IconLink href={`mailto:${email}`}>
           <FontAwesomeIcon icon={faEnvelope} />
         </IconLink>
 

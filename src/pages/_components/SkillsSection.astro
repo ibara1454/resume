@@ -6,14 +6,15 @@ import Badge from './Badge.astro';
 
 interface Props {
   skills: string[];
+  title?: string;
   class?: string;
 }
 
-const { skills, class: className, ...rest } = Astro.props;
+const { skills, title = 'Skills', class: className, ...rest } = Astro.props;
 ---
 
 <Section class={className} noBreak {...rest}>
-  <Title level="section" text="Skills" />
+  <Title level="section" text={title} />
   <HStack gap="1" wrap>
     {skills.map((item) => <Badge text={item} accent />)}
   </HStack>
