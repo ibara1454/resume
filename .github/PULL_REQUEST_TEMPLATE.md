@@ -8,6 +8,8 @@
 
 ## Type of Change
 
+<!-- Check all that apply. Do NOT remove unchecked items — keep the full list as-is. -->
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Content update (profile data, text changes)
