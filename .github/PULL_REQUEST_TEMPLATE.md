@@ -1,3 +1,7 @@
+<!-- PR title must follow Conventional Commits format: <type>(<scope>): <description>
+     e.g. feat(profile): add new certification, fix(layout): correct spacing on mobile
+     Valid types: feat, fix, docs, style, refactor, test, chore, perf, ci, build, revert -->
+
 ## Summary
 
 <!-- Brief description of what this PR does and why -->
