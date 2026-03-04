@@ -9,11 +9,11 @@ interface Props {
 const { class: className, shadow = false, ...rest } = Astro.props;
 ---
 
-<div
+<main
   class:list={[className, style.printableLayout, shadow && style.shadow]}
   {...rest}
 >
   <div class={style.page}>
     <slot />
   </div>
-</div>
+</main>
