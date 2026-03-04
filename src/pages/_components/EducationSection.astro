@@ -8,14 +8,20 @@ import type { Education } from '@data/profile';
 
 interface Props {
   education: Array<Education>;
+  title?: string;
   class?: string;
 }
 
-const { education, class: className, ...rest } = Astro.props;
+const {
+  education,
+  title = 'Education',
+  class: className,
+  ...rest
+} = Astro.props;
 ---
 
 <Section class={className} noBreak {...rest}>
-  <Title level="section" text="Education" />
+  <Title level="section" text={title} />
   <VStack gap="1">
     {
       education.map((item) => (

@@ -6,13 +6,14 @@ import type { Certification } from '@data/profile';
 
 interface Props {
   certifications: Certification[];
+  title?: string;
 }
 
-const { certifications, ...rest } = Astro.props;
+const { certifications, title = 'Certifications', ...rest } = Astro.props;
 ---
 
 <Section noBreak {...rest}>
-  <Title level="section" text="Certifications" />
+  <Title level="section" text={title} />
   <div class="grid grid-cols-4 gap-4">
     {
       certifications.map((item) => (
