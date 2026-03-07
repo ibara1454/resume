@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```sh
 npm run dev          # Start local dev server at http://localhost:4321
-npm run build        # Build production site to ./.next/
+npm run build        # Type-check and build production site to ./.next/
 npm run preview      # Preview production build locally
 npm run lint         # Run ESLint
 npm run prettier     # Check formatting with Prettier
