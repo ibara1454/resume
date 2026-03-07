@@ -8,7 +8,7 @@ https://ibara1454-resume.vercel.app
 
 Minimalist resume template which is inspired by https://github.com/BartoszJarocki/cv.
 
-Built with [Astro](https://astro.build/) and React.
+Built with [Next.js](https://nextjs.org/) and React.
 
 ## 🚀 Project Structure
 
@@ -20,13 +20,12 @@ Any static assets, such as images, can be placed in the `public/` directory.
 
 Valid commands are:
 
-| Command             | Action                                           |
-| :------------------ | :----------------------------------------------- |
-| `npm install`       | Installs dependencies                            |
-| `npm run dev`       | Starts local dev server                          |
-| `npm run build`     | Build your production site to `./dist/`          |
-| `npm run preview`   | Preview your build locally, before deploying     |
-| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server                      |
+| `npm run build`   | Build your production site to `./.next/`     |
+| `npm run preview` | Preview your build locally, before deploying |
 
 ## How to run tests
 
