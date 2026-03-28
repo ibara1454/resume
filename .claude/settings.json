@@ -3,6 +3,15 @@
     "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "gh-workflow@agent-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "agent-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "ibara1454/agent-marketplace"
+      }
+    }
   }
 }
