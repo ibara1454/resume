@@ -10,7 +10,6 @@ import Text from './Text';
 import Title from './Title';
 import HStack from './HStack';
 import VStack from './VStack';
-import IconLink from './IconLink';
 import Avatar from './Avatar';
 import Badge from './Badge';
 
@@ -56,35 +55,60 @@ export default function ProfileSection({
             ))}
           </HStack>
           <Text text={about} />
-          <HStack gap="1" className="my-2">
-            <IconLink href={`mailto:${email}`} aria-label="Email">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </IconLink>
+          <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-0 my-2">
+            <a href={`mailto:${email}`} aria-label="Email">
+              <HStack verticalAlign="center">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  size="xs"
+                  className="text-gray-500 mr-2"
+                />
+                <Text text={email} />
+              </HStack>
+            </a>
             {githubId && (
-              <IconLink
+              <a
                 href={`https://github.com/${githubId}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <FontAwesomeIcon icon={faGithub} />
-              </IconLink>
+                <HStack verticalAlign="center">
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    size="xs"
+                    className="text-gray-500 mr-2"
+                  />
+                  <Text text={`github.com/${githubId}`} />
+                </HStack>
+              </a>
             )}
             {linkedInId && (
-              <IconLink
+              <a
                 href={`https://www.linkedin.com/in/${linkedInId}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </IconLink>
+                <HStack verticalAlign="center">
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    size="xs"
+                    className="text-gray-500 mr-2"
+                  />
+                  <Text text={`linkedin.com/in/${linkedInId}`} />
+                </HStack>
+              </a>
             )}
-          </HStack>
-          <HStack verticalAlign="center">
-            <FontAwesomeIcon
-              icon={faEarthAsia}
-              size="xs"
-              className="text-gray-500 mr-2"
-            />
-            <Text text={`${city}, ${country}`} />
-          </HStack>
+            <HStack verticalAlign="center">
+              <FontAwesomeIcon
+                icon={faEarthAsia}
+                size="xs"
+                className="text-gray-500 mr-2"
+              />
+              <Text text={`${city}, ${country}`} />
+            </HStack>
+          </div>
         </VStack>
         <Avatar src={avatarImage} alt="Avatar image" />
       </HStack>
