@@ -100,7 +100,7 @@ export const profile: Profile = {
       'Chinese:native',
     ],
     about:
-      'Experienced Frontend-focused Full Stack Engineer with a comprehensive background in frontend, backend, and Android development and 7+ years of practical experience. Demonstrates solid application development skills and proficiency in modern architectures and popular frameworks. Skilled at writing clean code and improving the overall development experience.',
+      'Full Stack Engineer with 7+ years of experience in frontend, backend, and Android development. Proficient in modern architectures and frameworks including TypeScript, React, Node.js, Kotlin, Kubernetes, and cloud platforms (AWS, GCP). Focused on writing clean, maintainable code and improving developer experience.',
   },
   contact: {
     city: 'Tokyo',
@@ -125,10 +125,11 @@ export const profile: Profile = {
         'Android',
       ],
       activities: [
-        'Working as a frontend focused full stack engineer in a 20-member team. Engineered and launched a comprehensive access control system and visitor registration web application, tech stack including TypeScript, React, Node.js, AWS, and Kubernetes.',
-        "Playing a key role in leading the team's direction by partnering with the product owner to refine product vision and translate it into actionable OKRs and project requirements.",
-        'Architected and implemented a full-cycle release strategy from the ground up, incorporating CI/CD pipelines and automated testing which resulted in a significant reduction in deployment-related issues.',
-        'Authored and enforced frontend development guidelines and best practices, and mentored a team of frontend engineers, leading to improvements in code quality and team velocity.',
+        'Built an internal access control and visitor registration platform (TypeScript, React, Node.js, AWS, Kubernetes) as part of a 20-engineer team.',
+        'Partnered with product owner to refine product vision, translate business goals into OKRs and project requirements, and shape project roadmaps.',
+        'Designed end-to-end release workflow with CI/CD pipelines that decoupled 5+ day QA cycles from active development, enabling continuous feature work during release testing with transparent progress tracking.',
+        'Established frontend development guidelines, code review standards, and unit testing culture; led the effort to raise test coverage from 10% to 50%.',
+        'Mentored 2+ frontend engineers through code reviews and pairing, improving code quality and team velocity.',
       ],
       website: 'https://woven.toyota/en/',
     },
@@ -142,25 +143,24 @@ export const profile: Profile = {
         {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
           activities: [
-            'Worked as a frontend/backend engineer on a multi-platform team which had around 10 members, developing the "Mercari CS Tool" using technologies such as GCP, React, PHP, Go, GraphQL, and Kubernetes.',
-            'Contributed to the "CS Tool backend migration" project, consolidating the legacy backend SQL queries into a unified GraphQL service.',
-            'Led the team to improve development efficiency significantly using Skaffold. As a result, the reflection time of changes was reduced from 15~30 minutes to just 1 minute.',
+            'Built and maintained Mercari CS Tool (GCP, React, PHP, Go, GraphQL, Kubernetes), the internal platform powering customer support operations for Mercari marketplace.',
+            'Migrated legacy PHP backend with direct SQL queries to a unified GraphQL service, enabling API reuse across teams and modernizing the tech stack.',
+            'Introduced Skaffold-based local development workflow, reducing hot-reload time from 15–30 minutes to under 1 minute (15–30x improvement).',
           ],
         },
         {
           jobTitle: 'Android Engineer - Mercari Marketplace',
           activities: [
-            'Served as a key Android engineer in an 8-member (2~3 Android engineers) multi-platform team, developing the "Mercari" Android application using Kotlin and Jetpack Compose.',
-            'Mentored junior Android engineers, fostering their skills and knowledge to enhance team capabilities.',
-            'Collaborated closely with designers and product owners, proposing and implementing numerous user experience improvements for new projects.',
+            'Developed features for Mercari Android app using Kotlin and Jetpack Compose as one of 3 Android engineers on an 8-person cross-platform team.',
+            'Mentored 2+ junior engineers through code reviews and pair programming, accelerating their ramp-up to independent contributors.',
+            'Proposed and shipped UX improvements in collaboration with design and product, enhancing user experience for new feature launches.',
           ],
         },
         {
           jobTitle: 'Frontend Engineer - Mercari Marketplace',
           activities: [
-            'Contributed as a frontend engineer in an 8-member frontend team, developing the "Mercari" marketplace website using technologies such as TypeScript, React, Jotai, and Next.js.',
-            'Contributed to the success of cross-team projects by leveraging comprehensive understanding of each team to effectively coordinate efforts and deliver results.',
-            'Played a pivotal role as frontend developer for the "My Collection" project, assisting in designing and reviewing the backend APIs and led multiple technical decisions.',
+            'Developed Mercari marketplace web app (TypeScript, React, Next.js, Jotai), part of a Mercari marketplace service with 20M+ MAU, as one of 8 frontend engineers.',
+            'Led key frontend architecture decisions for "My Collection" feature and co-designed BFF APIs with the backend team, balancing maintainability with minimal API calls.',
           ],
         },
       ],
@@ -191,17 +191,17 @@ export const profile: Profile = {
         {
           jobTitle: 'Android Engineer - Yahoo! Mail Android',
           activities: [
-            'Worked as an Android engineer in a team of 10, developing the "Yahoo! Mail" Android application using technologies such as RxJava, MVVM architecture, and Clean architecture.',
-            'Implemented core features including the OpenID Connect authorization method and IMAP client.',
-            'Utilized critical knowledge to enhance test automation, improve linting processes, and set up CI/CD configurations and multiple build variants.',
+            'Built core features for Yahoo! Mail Android app (10M+ downloads) using RxJava, MVVM, and Clean Architecture in a 10-engineer team.',
+            'Implemented OpenID Connect authentication flow and IMAP client library, enabling secure mail access for Yahoo users.',
+            'Established CI/CD pipelines with automated testing and lint checks across multiple build variants, improving build reliability and developer workflow.',
           ],
         },
         {
           jobTitle: 'Frontend Engineer - Yahoo! Mail Web',
           activities: [
-            'Served as a frontend engineer/tech lead in "Yahoo! Mail Web" team, employing technologies such as React, Redux, and Kubernetes in the "Yahoo! Mail Web React Renewal" project.',
-            "Led an effort to improve the website's performance with respect to Core Web Vitals, achieving an exceptional 100%+ improvement in score.",
-            'Architected the backend infrastructure from the ground up for the "Yahoo! Mail Web React Renewal" project using Kubernetes.',
+            "Served as tech lead for Yahoo! Mail Web React migration (React, Redux, Kubernetes), modernizing the frontend stack of one of Japan's largest webmail services.",
+            'Optimized Core Web Vitals performance, improving Lighthouse score from 30+ to 60+ through bundle optimization, code splitting, and render path improvements.',
+            'Architected Kubernetes-based backend infrastructure for renewed web app, designing service topology, deployment strategy, and autoscaling policies.',
           ],
         },
       ],
