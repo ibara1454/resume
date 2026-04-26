@@ -55,7 +55,13 @@ export default function ProfileSection({
             ))}
           </HStack>
           <Text text={about} />
-          <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-0 my-2">
+          <HStack
+            gap="2"
+            rowGap="0"
+            wrap
+            verticalAlign="center"
+            className="my-2"
+          >
             <a href={`mailto:${email}`} aria-label="Email">
               <HStack verticalAlign="center">
                 <FontAwesomeIcon
@@ -108,7 +114,7 @@ export default function ProfileSection({
               />
               <Text text={`${city}, ${country}`} />
             </HStack>
-          </div>
+          </HStack>
         </VStack>
         <Avatar src={avatarImage} alt="Avatar image" />
       </HStack>

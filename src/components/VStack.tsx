@@ -11,8 +11,10 @@ type HorizontalAlign = 'start' | 'center' | 'end' | 'stretch';
 
 interface VStackProps {
   gap?: GapLevel;
+  columnGap?: GapLevel;
   verticalAlign?: VerticalAlign;
   horizontalAlign?: HorizontalAlign;
+  wrap?: boolean;
   className?: string;
   children?: React.ReactNode;
 }
@@ -20,20 +22,29 @@ interface VStackProps {
 export default function VStack({
   className,
   gap = '0',
+  columnGap,
   verticalAlign = 'start',
   horizontalAlign = 'start',
+  wrap = false,
   children,
 }: VStackProps) {
+  const effectiveColumnGap = columnGap ?? gap;
   return (
     <div
       className={clsx(
         className,
         'flex flex-col',
         {
-          'gap-2': gap === '1',
-          'gap-4': gap === '2',
-          'gap-6': gap === '3',
-          'gap-8': gap === '4',
+          'gap-y-2': gap === '1',
+          'gap-y-4': gap === '2',
+          'gap-y-6': gap === '3',
+          'gap-y-8': gap === '4',
+        },
+        {
+          'gap-x-2': effectiveColumnGap === '1',
+          'gap-x-4': effectiveColumnGap === '2',
+          'gap-x-6': effectiveColumnGap === '3',
+          'gap-x-8': effectiveColumnGap === '4',
         },
         {
           'justify-start': verticalAlign === 'start',
@@ -47,6 +58,10 @@ export default function VStack({
           'items-center': horizontalAlign === 'center',
           'items-end': horizontalAlign === 'end',
           'items-stretch': horizontalAlign === 'stretch',
+        },
+        {
+          'flex-wrap': wrap,
+          'flex-nowrap': !wrap,
         },
       )}
     >
