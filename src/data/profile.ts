@@ -100,7 +100,7 @@ export const profile: Profile = {
       'Chinese:native',
     ],
     about:
-      'Full Stack Engineer with 7+ years of experience in frontend, backend, and Android development. Proficient in modern architectures and frameworks including TypeScript, React, Node.js, Kotlin, Kubernetes, and cloud platforms (AWS, GCP). Focused on writing clean, maintainable code and improving developer experience.',
+      'Full Stack Engineer with 8+ years of experience in frontend, backend, and Android development. Proficient in modern architectures and frameworks including TypeScript, React, Node.js, Kotlin, Kubernetes, and cloud platforms (AWS, GCP). Focused on writing clean, maintainable code and improving developer experience.',
   },
   contact: {
     city: 'Tokyo',
