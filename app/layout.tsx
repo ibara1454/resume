@@ -7,7 +7,7 @@ import './globals.css';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.ico' },
 };
 
 export default function RootLayout({
