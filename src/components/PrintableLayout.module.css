@@ -1,3 +1,11 @@
+/* Shrink the rem base from the browser default (16px) to 14px so all rem-based
+  spacing and font sizes scale down proportionally. Using a percentage
+  instead of an absolute px value preserves the user's browser font-size
+  preference. */
+:global(html) {
+  font-size: 87.5%;
+}
+
 .printableLayout {
   width: 210mm; /* A4 width: 210mm */
   padding: 0.4in;
@@ -20,14 +28,6 @@
     margin: 0.4in;
   }
 
-  /* Shrink the rem base from the browser default (16px) to 14px so all rem-based
-     spacing and font sizes scale down proportionally for print. Using a percentage
-     instead of an absolute px value preserves the user's browser font-size
-     preference. */
-  :global(html) {
-    font-size: 87.5%;
-  }
-
   .printableLayout {
     width: unset;
     padding: unset;
@@ -37,9 +37,5 @@
     &.shadow {
       box-shadow: unset;
     }
-  }
-
-  .page {
-    width: unset;
   }
 }
