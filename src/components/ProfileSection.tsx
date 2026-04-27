@@ -67,6 +67,7 @@ export default function ProfileSection({
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   size="xs"
+                  fixedWidth
                   className="text-gray-500 mr-2"
                 />
                 <Text text={email} />
@@ -83,6 +84,7 @@ export default function ProfileSection({
                   <FontAwesomeIcon
                     icon={faGithub}
                     size="xs"
+                    fixedWidth
                     className="text-gray-500 mr-2"
                   />
                   <Text text={`github.com/${githubId}`} />
@@ -100,6 +102,7 @@ export default function ProfileSection({
                   <FontAwesomeIcon
                     icon={faLinkedinIn}
                     size="xs"
+                    fixedWidth
                     className="text-gray-500 mr-2"
                   />
                   <Text text={`linkedin.com/in/${linkedInId}`} />
@@ -110,6 +113,7 @@ export default function ProfileSection({
               <FontAwesomeIcon
                 icon={faEarthAsia}
                 size="xs"
+                fixedWidth
                 className="text-gray-500 mr-2"
               />
               <Text text={`${city}, ${country}`} />
