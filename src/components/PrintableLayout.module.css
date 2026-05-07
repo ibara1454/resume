@@ -1,41 +1,36 @@
-/* Shrink the rem base from the browser default (16px) to 14px so all rem-based
-  spacing and font sizes scale down proportionally. Using a percentage
-  instead of an absolute px value preserves the user's browser font-size
-  preference. */
-:global(html) {
-  font-size: 87.5%;
+:global(:root) {
+  --print-rem-base: 14px;
+  --screen-rem-base: 16px;
 }
 
 .printableLayout {
-  width: 210mm; /* A4 width: 210mm */
-  padding: 0.4in;
+  --print-paper-width: 210mm;
+  --print-padding: 0.4in;
+  --page-padding: calc(var(--print-padding) / var(--print-rem-base) * 1rem);
+
+  width: calc(
+    var(--print-paper-width) * var(--screen-rem-base) / var(--print-rem-base)
+  );
+  padding: var(--page-padding);
   margin: 0 auto;
-
-  &.shadow {
-    box-shadow:
-      5px 8px 9px 0px rgba(0, 0, 0, 0.4),
-      5px 8px 30px 0px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.page {
-  width: calc(210mm - 2 * 0.4in); /* A4 width: 210mm */
 }
 
 @media print {
+  /* Shrink the rem base so all rem-based spacing and font sizes scale down
+    proportionally for print. Using a percentage instead of an absolute px value
+    preserves the user's browser font-size preference. */
+  :global(html) {
+    font-size: calc(var(--print-rem-base) / var(--screen-rem-base) * 100%);
+  }
+
   @page {
     size: A4 portrait;
-    margin: 0.4in;
+    margin: 0;
   }
 
   .printableLayout {
+    /* The screen-scaled width overflows A4; let @page control the layout size. */
     width: unset;
-    padding: unset;
-    margin: unset;
     print-color-adjust: exact;
-
-    &.shadow {
-      box-shadow: unset;
-    }
   }
 }
