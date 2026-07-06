@@ -5,9 +5,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-npm run dev          # Start local dev server at http://localhost:4321
+npm run dev          # Start local dev server at http://localhost:8080
+npm run dev:test     # Start dev server at http://localhost:4321 for Playwright (HIDE_DEV_INDICATORS applied)
 npm run build        # Type-check and build production site to ./.next/
-npm run preview      # Preview production build locally
+npm run preview      # Preview production build locally at http://localhost:8080
 npm run lint         # Run ESLint
 npm run prettier     # Check formatting with Prettier
 npm run test         # Run Playwright visual regression tests
