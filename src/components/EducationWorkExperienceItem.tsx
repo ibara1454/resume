@@ -5,7 +5,8 @@ import HStack from './HStack';
 
 interface EducationWorkExperienceItemProps {
   title: string;
-  subTitle?: string;
+  subTitle: string;
+  location: string;
   startPeriod: string;
   endPeriod: string;
   url: string;
@@ -17,6 +18,7 @@ export default function EducationWorkExperienceItem({
   className,
   title,
   subTitle,
+  location,
   startPeriod,
   endPeriod,
   url,
@@ -37,9 +39,16 @@ export default function EducationWorkExperienceItem({
         >
           <Title level="item" text={title} />
         </a>
-        <Text size="lg" text={`${startPeriod} - ${endPeriod}`} />
+        <Text accent text={`${startPeriod} - ${endPeriod}`} />
       </HStack>
-      {subTitle && <Text accent text={subTitle} />}
+      <HStack
+        className="w-full"
+        horizontalAlign="space-between"
+        verticalAlign="end"
+      >
+        {subTitle ? <Text accent text={subTitle} /> : <span />}
+        {location && <Text accent text={location} />}
+      </HStack>
       {children}
     </article>
   );
