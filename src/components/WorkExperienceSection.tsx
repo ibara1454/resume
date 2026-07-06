@@ -29,6 +29,7 @@ export default function WorkExperienceSection({
             key={experience.company}
             title={experience.company}
             subTitle={experience.jobTitle}
+            location={experience.location}
             startPeriod={experience.startDate}
             endPeriod={experience.endDate}
             url={experience.website}

@@ -34,6 +34,7 @@ export type Experience = SinglePositionExperience | MultiPositionExperience;
 export interface SinglePositionExperience {
   jobTitle: string;
   company: string;
+  location: string;
   startDate: string;
   endDate: string;
   techStack: string[];
@@ -50,6 +51,7 @@ export function isSinglePositionExperience(
 export interface MultiPositionExperience {
   jobTitle: string;
   company: string;
+  location: string;
   startDate: string;
   endDate: string;
   techStack: string[];
@@ -71,6 +73,7 @@ export interface Position {
 export interface Education {
   name: string;
   degree: string;
+  location: string;
   startDate: string;
   endDate: string;
   website: string;
@@ -113,6 +116,7 @@ export const profile: Profile = {
     {
       jobTitle: 'Full Stack Engineer',
       company: 'Woven by Toyota, Inc.',
+      location: 'Tokyo, Japan',
       startDate: '2024.12',
       endDate: 'Present',
       techStack: [
@@ -141,6 +145,7 @@ export const profile: Profile = {
       jobTitle:
         'Backend/Frontend Engineer → Android Engineer → Frontend Engineer',
       company: 'Mercari, Inc.',
+      location: 'Tokyo, Japan',
       startDate: '2021.11',
       endDate: '2024.11',
       positions: [
@@ -189,6 +194,7 @@ export const profile: Profile = {
     {
       jobTitle: 'Android Engineer → Frontend Engineer',
       company: 'Yahoo Japan Corporation',
+      location: 'Tokyo, Japan',
       startDate: '2018.04',
       endDate: '2021.10',
       positions: [
@@ -223,6 +229,7 @@ export const profile: Profile = {
     {
       name: 'University of Tsukuba',
       degree: 'Master of Engineering in Computer Science',
+      location: 'Tsukuba, Japan',
       startDate: '2016.04',
       endDate: '2018.03',
       website: 'https://www.tsukuba.ac.jp/',
@@ -230,6 +237,7 @@ export const profile: Profile = {
     {
       name: 'Fu Jen Catholic University',
       degree: 'Bachelor of Science in Mathematics',
+      location: 'New Taipei, Taiwan',
       startDate: '2007.09',
       endDate: '2012.06',
       website: 'https://www.fju.edu.tw/',

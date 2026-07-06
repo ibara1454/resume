@@ -1,6 +1,5 @@
 import Section from './Section';
 import Title from './Title';
-import Text from './Text';
 import VStack from './VStack';
 import EducationWorkExperienceItem from './EducationWorkExperienceItem';
 import type { Education } from '@data/profile';
@@ -22,12 +21,12 @@ export default function EducationSection({
           <EducationWorkExperienceItem
             key={item.name}
             title={item.name}
+            subTitle={item.degree}
+            location={item.location}
             startPeriod={item.startDate}
             endPeriod={item.endDate}
             url={item.website}
-          >
-            <Text text={item.degree} />
-          </EducationWorkExperienceItem>
+          />
         ))}
       </VStack>
     </Section>
