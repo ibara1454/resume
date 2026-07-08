@@ -21,12 +21,17 @@
     font-size: calc(var(--print-rem-base) / var(--screen-rem-base) * 100%);
   }
 
+  /* Page margins must live on @page, not as container padding: container
+    padding applies once at the start/end of the whole document, so content on
+    intermediate page boundaries would run flush to the paper edge. */
   @page {
     size: A4 portrait;
-    margin: 0;
+    margin: 0.4in;
   }
 
   .printableLayout {
+    width: auto;
+    padding: 0;
     print-color-adjust: exact;
   }
 }
