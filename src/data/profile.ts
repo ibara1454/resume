@@ -99,7 +99,7 @@ export const profile: Profile = {
     jobTitle: 'Full Stack Engineer',
     languages: [
       'English: B2 (business)',
-      'Japanese: C2 (proficient)',
+      'Japanese: JLPT N1 (C2, proficient)',
       'Chinese: native',
     ],
     about:
