@@ -98,12 +98,12 @@ export const profile: Profile = {
     },
     jobTitle: 'Full Stack Engineer',
     languages: [
-      'English:B2(business)',
-      'Japanese:C2(proficient)',
-      'Chinese:native',
+      'English: B2 (business)',
+      'Japanese: JLPT N1 (C2, proficient)',
+      'Chinese: native',
     ],
     about:
-      'Full Stack Engineer with 8+ years of experience in frontend, backend, and Android development. Proficient in modern architectures and frameworks including TypeScript, React, Node.js, Kotlin, Kubernetes, and cloud platforms (AWS, GCP). Focused on writing clean, maintainable code and improving developer experience.',
+      'Full Stack Engineer with 8+ years shipping consumer products at scale — a 20M+ MAU marketplace and a 10M+ download mail app — across frontend, backend, and Android. Deep expertise in TypeScript, React, Node.js, Kotlin, and Kubernetes on AWS/GCP. Led AI developer tooling adoption (Claude Code, GitHub Copilot, self-hosted LLM services) across a 40-engineer organization.',
   },
   contact: {
     city: 'Tokyo',
@@ -129,15 +129,14 @@ export const profile: Profile = {
         'Android',
       ],
       activities: [
-        'Built an internal access control and visitor registration platform (TypeScript, React, Node.js, Kubernetes) as part of a 20-engineer team.',
-        "Launched the visitor registration app to public internet by driving the team's first deployment review (including security and compliance review), coordinating with security and penetration testing teams to meet Official Launch.",
-        'Identified project management process gap on a PM-less team; introduced lightweight PM methodology (project templates, progress tracking, project-based sprint reviews, platform-split retros) and delegated ownership to members, enabling systematic delivery without adding management overhead.',
-        'Led frontend services consolidation (6 → 2 services) and migration off the company-wide monorepo, reducing release load and code duplication ahead of Official Launch.',
-        'Led Next.js migration to eliminate BE wrapper dependency for FE features and reduce cross-team development overhead; delivered initial CSR phase with SSR and page-structure migration ongoing.',
-        'Led Woven App integration; declined an authentication library already adopted by other teams after architectural review surfaced long-term FE maintainability risk, proposing a best-practice alternative.',
-        'Designed end-to-end release workflow with CI/CD pipelines that enabled continuous feature work during 5+ day QA cycles and delivered zero critical incidents across 10 months of operation.',
-        'Established frontend development guidelines, code review standards, and unit testing culture (coverage 10%→50%); mentored 2+ frontend engineers via code reviews and pairing.',
-        "Led AI developer tooling adoption across a 40-engineer organization: built an OSS LLM code completion service on AWS ahead of GitHub Copilot's internal approval, then drove Copilot and Claude Code rollout including automated PR review integration.",
+        "Built an internal access control and visitor registration platform (TypeScript, React, Node.js, Kubernetes) on a 20-engineer team, and drove the team's first public-internet launch through security, compliance, and penetration-testing reviews.",
+        'Led AI developer tooling adoption across a 40-engineer organization: built a self-hosted LLM code completion service on AWS before GitHub Copilot was approved internally, then drove Copilot and Claude Code rollout including automated PR review integration.',
+        'Consolidated 6 frontend services into 2 and migrated them off the company-wide monorepo, cutting release load and code duplication ahead of Official Launch.',
+        'Led migration to Next.js, removing the backend-wrapper dependency that blocked frontend-only feature delivery; shipped the CSR phase with SSR migration in progress.',
+        'Designed the end-to-end release workflow and CI/CD pipelines, enabling continuous feature development during 5+ day QA cycles with zero critical incidents across 10 months of operation.',
+        'Drove architecture review for Woven App integration: rejected an authentication library already adopted by peer teams over long-term maintainability risk, and delivered a best-practice alternative.',
+        'Established frontend development guidelines, code review standards, and a unit testing culture, raising coverage from 10% to 50%; mentored 2+ frontend engineers via code reviews and pairing.',
+        'Closed the project management gap on a PM-less team by introducing lightweight processes (project templates, progress tracking, sprint reviews, platform-split retros) and delegating ownership, enabling systematic delivery without management overhead.',
       ],
       website: 'https://woven.toyota/en/',
     },
@@ -152,24 +151,24 @@ export const profile: Profile = {
         {
           jobTitle: 'Backend/Frontend Engineer - Mercari CS Tool',
           activities: [
-            'Built and maintained Mercari CS Tool (GCP, React, PHP, Go, GraphQL, Kubernetes), the internal platform powering customer support operations for Mercari marketplace.',
-            'Migrated legacy PHP backend with direct SQL queries to a unified GraphQL service, enabling API reuse across teams and modernizing the tech stack.',
-            'Introduced Skaffold-based local development workflow, reducing hot-reload time from 15–30 minutes to under 1 minute (15–30x improvement).',
+            'Built and maintained Mercari CS Tool (GCP, React, PHP, Go, GraphQL, Kubernetes), the internal platform powering customer support operations for the Mercari marketplace.',
+            'Migrated a legacy PHP backend with raw SQL queries to a unified GraphQL service, enabling API reuse across teams and modernizing the stack.',
+            'Introduced a Skaffold-based local development workflow, cutting hot-reload time from 15–30 minutes to under 1 minute.',
           ],
         },
         {
           jobTitle: 'Android Engineer - Mercari Marketplace',
           activities: [
-            'Developed features for Mercari Android app using Kotlin and Jetpack Compose as one of 3 Android engineers on an 8-person cross-platform team.',
+            'Developed features for the Mercari Android app (Kotlin, Jetpack Compose) as one of 3 Android engineers on an 8-person cross-platform team.',
             'Mentored 2+ junior engineers through code reviews and pair programming, accelerating their ramp-up to independent contributors.',
-            'Proposed and shipped UX improvements in collaboration with design and product, enhancing user experience for new feature launches.',
+            'Partnered with design and product to propose and ship UX improvements for new feature launches.',
           ],
         },
         {
           jobTitle: 'Frontend Engineer - Mercari Marketplace',
           activities: [
-            'Developed Mercari marketplace web app (TypeScript, React, Next.js, Jotai), part of a Mercari marketplace service with 20M+ MAU, as one of 8 frontend engineers.',
-            'Led key frontend architecture decisions for "My Collection" feature and co-designed BFF APIs with the backend team, balancing maintainability with minimal API calls.',
+            'Developed the Mercari marketplace web app (TypeScript, React, Next.js, Jotai) serving 20M+ MAU, as one of 8 frontend engineers.',
+            'Led frontend architecture for the "My Collection" feature and co-designed BFF APIs with the backend team, balancing maintainability against API call volume.',
           ],
         },
       ],
@@ -201,8 +200,8 @@ export const profile: Profile = {
         {
           jobTitle: 'Android Engineer - Yahoo! Mail Android',
           activities: [
-            'Built core features for Yahoo! Mail Android app (10M+ downloads) using RxJava, MVVM, and Clean Architecture in a 10-engineer team.',
-            'Implemented OpenID Connect authentication and IMAP client library; established CI/CD pipelines with automated testing and lint checks across multiple build variants.',
+            'Built core features for the Yahoo! Mail Android app (10M+ downloads) using RxJava, MVVM, and Clean Architecture on a 10-engineer team.',
+            'Implemented OpenID Connect authentication and an IMAP client library; established CI/CD pipelines with automated testing and lint checks across multiple build variants.',
           ],
         },
         {
