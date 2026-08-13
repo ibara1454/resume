@@ -103,7 +103,7 @@ export const profile: Profile = {
       'Chinese: native',
     ],
     about:
-      'Full Stack Engineer with 8+ years shipping consumer products at scale — a 20M+ MAU marketplace and a 10M+ download mail app — across frontend, backend, and Android. Deep expertise in TypeScript, React, Node.js, Kotlin, and Kubernetes on AWS/GCP. Led AI developer tooling adoption (Claude Code, GitHub Copilot, self-hosted LLM services) across a 40-engineer organization.',
+      'Eight years across frontend, backend, and Android — frontend and Android on a 20M+ MAU marketplace at Mercari, Android on a 10M+ download mail app at Yahoo Japan, then tech lead for its web client. Now builds an internal access-control platform at Woven by Toyota, taken through its first public-internet launch, and leads AI developer tooling adoption across a 40-engineer organization.',
   },
   contact: {
     city: 'Tokyo',
