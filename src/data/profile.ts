@@ -228,7 +228,7 @@ export const profile: Profile = {
     {
       name: 'University of Tsukuba',
       degree: 'Master of Engineering in Computer Science',
-      location: 'Tsukuba, Japan',
+      location: 'Ibaraki, Japan',
       startDate: '2016.04',
       endDate: '2018.03',
       website: 'https://www.tsukuba.ac.jp/',
